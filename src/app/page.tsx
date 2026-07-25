@@ -348,84 +348,85 @@ export default function Home() {
         <div className="bg-gradient-to-b from-[#1a0f0a] via-[#2e1f14] to-[#1a0f0a]">
 
           {/* Transición al catálogo */}
-          <section className="min-h-[90vh] flex items-center justify-center relative overflow-hidden">
-            <div className="absolute inset-0 opacity-5" style={{
-              backgroundImage: "radial-gradient(circle, rgba(232,213,192,0.8) 1px, transparent 1px)",
-              backgroundSize: "24px 24px",
-            }}></div>
+          {/* Transición al catálogo */}
+<section className="min-h-[90vh] flex items-center justify-center relative overflow-hidden">
+  <div className="absolute inset-0 opacity-5" style={{
+    backgroundImage: "radial-gradient(circle, rgba(232,213,192,0.8) 1px, transparent 1px)",
+    backgroundSize: "24px 24px",
+  }}></div>
 
-            <div className="relative z-10 max-w-2xl mx-auto text-center px-4 py-12">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-              >
-           <motion.div
-  initial={{ opacity: 0, scale: 0.8 }}
-  whileInView={{ opacity: 1, scale: 1 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0.2, duration: 0.6 }}
-  animate={{ boxShadow: [
-    "0 0 0 0 rgba(232,213,192,0.5), 0 0 0 0 rgba(196,165,128,0.4)",
-    "0 0 0 15px rgba(232,213,192,0), 0 0 0 25px rgba(196,165,128,0)",
-    "0 0 0 0 rgba(232,213,192,0.5), 0 0 0 0 rgba(196,165,128,0.4)"
-  ] }}
-  transition={{ repeat: Infinity, duration: 2.5 }}
-  className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden mx-auto mb-8 border-4 border-[#c4a580]"
->
-  <motion.img
-    src="/fotos/hero.jpg"
-    alt="Baquetas Pro"
-    className="w-full h-full object-cover"
-    animate={{ scale: [1, 1.03, 1] }}
-    transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-  />
-</motion.div>
+  <div className="relative z-10 max-w-2xl mx-auto text-center px-4 py-12">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
+      {/* Logo circular con pulso */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+        animate={{ boxShadow: [
+          "0 0 0 0 rgba(232,213,192,0.5), 0 0 0 0 rgba(196,165,128,0.4)",
+          "0 0 0 15px rgba(232,213,192,0), 0 0 0 25px rgba(196,165,128,0)",
+          "0 0 0 0 rgba(232,213,192,0.5), 0 0 0 0 rgba(196,165,128,0.4)"
+        ] }}
+        className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden mx-auto mb-8 border-4 border-[#c4a580]"
+      >
+        <motion.img
+          src="/fotos/hero.jpg"
+          alt="Baquetas Pro"
+          className="w-full h-full object-cover"
+          animate={{ scale: [1, 1.03, 1] }}
+          transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
+        />
+      </motion.div>
 
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 }}
-                  className="text-white text-3xl md:text-5xl font-extrabold mb-6 leading-tight"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  Pero no necesitas gastar una fortuna.<br />
-                  <span className="text-[#e8d5c0]">Aquí tienes la solución.</span>
-                </motion.p>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4 }}
+        className="text-white text-3xl md:text-5xl font-extrabold mb-6 leading-tight"
+        style={{ fontFamily: "'Playfair Display', serif" }}
+      >
+        Pero no necesitas gastar una fortuna.<br />
+        <span className="text-[#e8d5c0]">Aquí tienes la solución.</span>
+      </motion.p>
 
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.6 }}
-                  className="text-[#c4a580] text-lg md:text-xl font-medium mb-10"
-                  style={{ fontFamily: "'Lora', serif" }}
-                >
-                  Baquetas de calidad a precios justos. Materiales probados y envíos a toda La Habana.
-                </motion.p>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.6 }}
+        className="text-[#c4a580] text-lg md:text-xl font-medium mb-10"
+        style={{ fontFamily: "'Lora', serif" }}
+      >
+        Baquetas de calidad a precios justos. Materiales probados y envíos a toda La Habana.
+      </motion.p>
 
-                <motion.a
-                  href="#catalogo"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 1 }}
-                  className="inline-flex flex-col items-center gap-2 text-[#e8d5c0] font-bold text-sm hover:text-white transition"
-                >
-                  <span style={{ fontFamily: "'Lora', serif" }}>Ver catálogo</span>
-                  <motion.span
-                    className="text-2xl"
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 1.5 }}
-                  >
-                    ↓
-                  </motion.span>
-                </motion.a>
-              </motion.div>
-            </div>
-          </section>
+      <motion.a
+        href="#catalogo"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 1 }}
+        className="inline-flex flex-col items-center gap-2 text-[#e8d5c0] font-bold text-sm hover:text-white transition"
+      >
+        <span style={{ fontFamily: "'Lora', serif" }}>Ver catálogo</span>
+        <motion.span
+          className="text-2xl"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+        >
+          ↓
+        </motion.span>
+      </motion.a>
+    </motion.div>
+  </div>
+</section>
 
 {/* Línea divisoria */}
 <div className="max-w-2xl mx-auto px-4 py-4">
