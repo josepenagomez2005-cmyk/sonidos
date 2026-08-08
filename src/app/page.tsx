@@ -42,6 +42,7 @@ export default function Home() {
               <a href="#maderas" className="hover:text-white transition">Maderas</a>
               <a href="#marcas" className="hover:text-white transition">Marcas</a>
               <a href="#catalogo" className="hover:text-white transition">Catálogo</a>
+              <a href="#resenas" className="hover:text-white transition">Reseñas</a>
               <a href="#contacto" className="hover:text-white transition">Pedir</a>
             </div>
           </div>
@@ -527,6 +528,86 @@ export default function Home() {
 </motion.div>
   </div>
 </section>
+
+{/* Reseñas + Dejar opinión */}
+<section id="resenas" className="py-20 px-4 max-w-4xl mx-auto">
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    variants={fadeIn}
+    className="text-center mb-12"
+  >
+    <span className="text-[#e8d5c0] font-bold text-sm tracking-widest uppercase" style={{ fontFamily: "'Lora', serif" }}>Reseñas</span>
+    <h2 className="text-3xl md:text-5xl font-extrabold mt-2 mb-4 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>Lo Que Dicen Nuestros Clientes</h2>
+  </motion.div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    {[
+      { nombre: "Alejandro G.", texto: "Excelente calidad. Las baquetas llegaron rápido y se sienten muy bien. Recomendado.", estrellas: 5, color: "border-l-amber-500" },
+      { nombre: "Julio Gutierrez", texto: "Me gustaron las 5B, pero quisiera usar madera de hickory en vez de maple. Deberian agrandar su catalogo y brindar mas opciones.", estrellas: 4, color: "border-l-purple-500" },
+      { nombre: "Pedro R.", texto: "Las AQJUNONG 7A son justo lo que buscaba. Livianas y rápidas. Además me llevé la llave gratis.", estrellas: 5, color: "border-l-emerald-500" },
+    ].map((resena, i) => (
+      <motion.div
+        key={resena.nombre}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: i * 0.15 }}
+        className={`bg-[#2e1f14]/80 backdrop-blur rounded-2xl p-6 shadow-sm border border-[#c4a580]/20 ${resena.color} border-l-4`}
+      >
+        <div className="flex gap-1 mb-3 text-amber-400">
+          {[...Array(resena.estrellas)].map((_, i) => (
+            <Star key={i} size={14} fill="currentColor" />
+          ))}
+        </div>
+        <p className="text-[#f5efe6] text-sm italic mb-4 leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>"{resena.texto}"</p>
+        <p className="text-[#e8d5c0] font-bold text-sm" style={{ fontFamily: "'Lora', serif" }}>{resena.nombre}</p>
+      </motion.div>
+    ))}
+  </div>
+
+  {/* Formulario de reseña */}
+  <motion.div
+    initial={{ opacity: 0, y: 10 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: 0.5 }}
+    className="max-w-xl mx-auto bg-[#1a0f0a] border border-[#c4a580]/25 rounded-xl p-6 shadow-md"
+  >
+    <p className="text-[#e8d5c0] text-sm font-bold tracking-wide mb-4 text-center" style={{ fontFamily: "'Lora', serif" }}>
+      Deja tu opinión
+    </p>
+    <form action="https://formspree.io/f/xzepdkbr" method="POST" className="space-y-3">
+      <input
+        type="text"
+        name="nombre"
+        placeholder="Tu nombre"
+        required
+        className="w-full bg-[#2e1f14] border border-[#c4a580]/30 rounded-lg px-4 py-2.5 text-[#f5efe6] text-sm focus:border-[#e8d5c0] focus:outline-none"
+        style={{ fontFamily: "'Lora', serif" }}
+      />
+      <textarea
+        name="reseña"
+        placeholder="Cuéntanos tu experiencia..."
+        required
+        rows={3}
+        className="w-full bg-[#2e1f14] border border-[#c4a580]/30 rounded-lg px-4 py-2.5 text-[#f5efe6] text-sm focus:border-[#e8d5c0] focus:outline-none resize-none"
+        style={{ fontFamily: "'Lora', serif" }}
+      />
+      <button
+        type="submit"
+        className="w-full bg-[#e8d5c0] hover:bg-white text-[#1a0f0a] py-2.5 rounded-lg font-bold text-sm transition"
+        style={{ fontFamily: "'Lora', serif" }}
+      >
+        Enviar reseña
+      </button>
+    </form>
+  </motion.div>
+</section>
+
+
+
 
           {/* Contacto */}
           <section id="contacto" className="py-20">
