@@ -9,6 +9,8 @@ export default function Home() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
   };
 
+  const mensajeWA = "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+hacer+un+pedido.+%C2%BFMe+ayudas%3F";
+
   return (
     <main
       className="min-h-screen text-[#f5efe6] font-sans overflow-x-hidden relative"
@@ -63,8 +65,8 @@ export default function Home() {
                 <a href="#numeracion" className="bg-[#e8d5c0] text-[#2e1f14] px-8 py-3.5 rounded-xl font-bold hover:bg-white transition shadow-lg" style={{ fontFamily: "'Lora', serif" }}>
                   <BookOpen size={18} className="inline mr-2" />Comenzar Guía
                 </a>
-                <a href="#catalogo" className="border-2 border-[#e8d5c0] text-[#e8d5c0] px-8 py-3.5 rounded-xl font-bold hover:bg-[#e8d5c0]/20 transition" style={{ fontFamily: "'Lora', serif" }}>
-                  Ver Catálogo
+                <a href={mensajeWA} className="border-2 border-[#e8d5c0] text-[#e8d5c0] px-8 py-3.5 rounded-xl font-bold hover:bg-[#e8d5c0]/20 transition" style={{ fontFamily: "'Lora', serif" }}>
+                  Pedir por WhatsApp
                 </a>
               </div>
             </motion.div>
@@ -160,24 +162,18 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="bg-[#2e1f14]/80 backdrop-blur rounded-2xl shadow-sm border border-[#c4a580]/30 hover:shadow-md transition overflow-hidden"
               >
-               <motion.img
-  src={item.img}
-  alt={`Baqueta ${item.talla}`}
-  className="w-full h-40 object-cover"
-  whileHover={{ scale: 1.08 }}
-  transition={{ duration: 0.4, ease: "easeOut" }}
-/>
+                <img src={item.img} alt={`Baqueta ${item.talla}`} className="w-full h-40 object-cover" />
                 <div className="p-5 text-center">
                   <motion.div
-  initial={{ rotateY: 90, opacity: 0 }}
-  whileInView={{ rotateY: 0, opacity: 1 }}
-  viewport={{ once: true }}
-  transition={{ delay: i * 0.15 + 0.3, duration: 0.6, ease: "easeOut" }}
-  whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
-  className="bg-[#e8d5c0] text-[#2e1f14] w-14 h-14 rounded-full flex items-center justify-center mx-auto -mt-10 relative z-10 text-xl font-black border-4 border-[#2e1f14]"
->
-  {item.talla}
-</motion.div>
+                    initial={{ rotateY: 90, opacity: 0 }}
+                    whileInView={{ rotateY: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.15 + 0.3, duration: 0.6, ease: "easeOut" }}
+                    whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
+                    className="bg-[#e8d5c0] text-[#2e1f14] w-14 h-14 rounded-full flex items-center justify-center mx-auto -mt-10 relative z-10 text-xl font-black border-4 border-[#2e1f14]"
+                  >
+                    {item.talla}
+                  </motion.div>
                   <span className="text-xs bg-[#3e2c1c] text-[#e8d5c0] px-2 py-0.5 rounded-full font-bold mt-3 inline-block" style={{ fontFamily: "'Lora', serif" }}>{item.tag}</span>
                   <p className="text-[#f5efe6] text-sm mt-3 font-medium" style={{ fontFamily: "'Lora', serif" }}>{item.desc}</p>
                   <div className="flex items-center justify-center gap-1 mt-3 text-xs text-[#e8d5c0] font-bold" style={{ fontFamily: "'Lora', serif" }}>
@@ -241,7 +237,13 @@ export default function Home() {
                   transition={{ delay: i * 0.15 }}
                   className="bg-[#2e1f14]/80 backdrop-blur rounded-2xl shadow-sm border border-[#c4a580]/30 hover:shadow-md transition overflow-hidden"
                 >
-                  <img src={madera.img} alt={madera.nombre} className="w-full h-40 object-cover" />
+                  <motion.img
+                    src={madera.img}
+                    alt={madera.nombre}
+                    className="w-full h-40 object-cover"
+                    whileHover={{ scale: 1.08 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                  />
                   <div className="p-5">
                     <h3 className="text-xl font-extrabold mb-1 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>{madera.nombre}</h3>
                     <span className="text-xs bg-[#3e2c1c] text-[#e8d5c0] px-2 py-0.5 rounded-full font-bold" style={{ fontFamily: "'Lora', serif" }}>{madera.tag}</span>
@@ -348,160 +350,183 @@ export default function Home() {
         <div className="bg-gradient-to-b from-[#1a0f0a] via-[#2e1f14] to-[#1a0f0a]">
 
           {/* Transición al catálogo */}
-          {/* Transición al catálogo */}
-<section className="min-h-[90vh] flex items-center justify-center relative overflow-hidden">
-  <div className="absolute inset-0 opacity-5" style={{
-    backgroundImage: "radial-gradient(circle, rgba(232,213,192,0.8) 1px, transparent 1px)",
-    backgroundSize: "24px 24px",
-  }}></div>
+          <section className="min-h-[90vh] flex items-center justify-center relative overflow-hidden">
+            <div className="absolute inset-0 opacity-5" style={{
+              backgroundImage: "radial-gradient(circle, rgba(232,213,192,0.8) 1px, transparent 1px)",
+              backgroundSize: "24px 24px",
+            }}></div>
 
-  <div className="relative z-10 max-w-2xl mx-auto text-center px-4 py-12">
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-    >
-      {/* Logo circular con pulso */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2, duration: 0.6 }}
-        animate={{ boxShadow: [
-          "0 0 0 0 rgba(232,213,192,0.5), 0 0 0 0 rgba(196,165,128,0.4)",
-          "0 0 0 15px rgba(232,213,192,0), 0 0 0 25px rgba(196,165,128,0)",
-          "0 0 0 0 rgba(232,213,192,0.5), 0 0 0 0 rgba(196,165,128,0.4)"
-        ] }}
-        className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden mx-auto mb-8 border-4 border-[#c4a580]"
-      >
-        <motion.img
-          src="/fotos/hero.jpg"
-          alt="Baquetas Pro"
-          className="w-full h-full object-cover"
-          animate={{ scale: [1, 1.03, 1] }}
-          transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-        />
-      </motion.div>
-
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.4 }}
-        className="text-white text-3xl md:text-5xl font-extrabold mb-6 leading-tight"
-        style={{ fontFamily: "'Playfair Display', serif" }}
-      >
-        Pero no necesitas gastar una fortuna.<br />
-        <span className="text-[#e8d5c0]">Aquí tienes la solución.</span>
-      </motion.p>
-
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.6 }}
-        className="text-[#c4a580] text-lg md:text-xl font-medium mb-10"
-        style={{ fontFamily: "'Lora', serif" }}
-      >
-        Baquetas de calidad a precios justos. Materiales probados y envíos a toda La Habana.
-      </motion.p>
-
-      <motion.a
-        href="#catalogo"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 1 }}
-        className="inline-flex flex-col items-center gap-2 text-[#e8d5c0] font-bold text-sm hover:text-white transition"
-      >
-        <span style={{ fontFamily: "'Lora', serif" }}>Ver catálogo</span>
-        <motion.span
-          className="text-2xl"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-        >
-          ↓
-        </motion.span>
-      </motion.a>
-    </motion.div>
-  </div>
-</section>
-
-{/* Línea divisoria */}
-<div className="max-w-2xl mx-auto px-4 py-4">
-  <div className="h-[1px] bg-gradient-to-r from-transparent via-[#c4a580]/50 to-transparent"></div>
-</div>
-
-          {/* Catálogo */}
-          <section id="catalogo" className="py-20 px-4">
-            <div className="max-w-5xl mx-auto">
+            <div className="relative z-10 max-w-2xl mx-auto text-center px-4 py-12">
               <motion.div
-                initial="hidden"
-                whileInView="visible"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                variants={fadeIn}
-                className="text-center mb-12"
+                transition={{ duration: 0.8 }}
               >
-                <span className="text-[#e8d5c0] font-bold text-sm tracking-widest uppercase" style={{ fontFamily: "'Lora', serif" }}>Catálogo</span>
-                <h2 className="text-3xl md:text-5xl font-extrabold mt-2 mb-4 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
-                  Baquetas Disponibles
-                </h2>
-              </motion.div>
+                {/* Logo circular con pulso */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                  animate={{ boxShadow: [
+                    "0 0 0 0 rgba(232,213,192,0.5), 0 0 0 0 rgba(196,165,128,0.4)",
+                    "0 0 0 15px rgba(232,213,192,0), 0 0 0 25px rgba(196,165,128,0)",
+                    "0 0 0 0 rgba(232,213,192,0.5), 0 0 0 0 rgba(196,165,128,0.4)"
+                  ] }}
+                  className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden mx-auto mb-8 border-4 border-[#c4a580]"
+                >
+                  <motion.img
+                    src="/fotos/hero.jpg"
+                    alt="Baquetas Pro"
+                    className="w-full h-full object-cover"
+                    animate={{ scale: [1, 1.03, 1] }}
+                    transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
+                  />
+                </motion.div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                {[
-                  { img: "/fotos/7A-AQJUNONG.jpg", nombre: "AQJUNONG 7A", desc: "Madera de maple. Ligera y rápida. Ideal para jazz, blues y manos pequeñas.", precio: "5.5 USD" },
-                  { img: "/fotos/5A-sticks.jpg", nombre: "5A Maple", desc: "Madera de maple. La más versátil. Perfecta para rock, pop y principiantes.", precio: "6 USD" },
-                  { img: "/fotos/5B-AQJUNONG.jpg", nombre: "AQJUNONG 5B", desc: "Madera de maple. Un poco más gruesa. Más volumen y presencia.", precio: "6.5 USD" },
-                ].map((prod, i) => (
-                  <motion.div
-                    key={prod.nombre}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="bg-[#2e1f14]/80 backdrop-blur rounded-2xl shadow-sm border border-[#c4a580]/30 hover:shadow-md transition overflow-hidden"
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 }}
+                  className="text-white text-3xl md:text-5xl font-extrabold mb-6 leading-tight"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  Pero no necesitas gastar una fortuna.<br />
+                  <span className="text-[#e8d5c0]">Aquí tienes la solución.</span>
+                </motion.p>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.6 }}
+                  className="text-[#c4a580] text-lg md:text-xl font-medium mb-10"
+                  style={{ fontFamily: "'Lora', serif" }}
+                >
+                  Baquetas de calidad a precios justos. Materiales probados y envíos a toda La Habana.
+                </motion.p>
+
+                <motion.a
+                  href="#catalogo"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 1 }}
+                  className="inline-flex flex-col items-center gap-2 text-[#e8d5c0] font-bold text-sm hover:text-white transition"
+                >
+                  <span style={{ fontFamily: "'Lora', serif" }}>Ver catálogo</span>
+                  <motion.span
+                    className="text-2xl"
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5 }}
                   >
-                    <motion.img
-  src={prod.img}
-  alt={prod.nombre}
-  className="w-full h-48 object-cover"
-  whileHover={{ scale: 1.06 }}
-  transition={{ duration: 0.4, ease: "easeOut" }}
-/>
-                    <div className="p-5 text-center">
-                      <h3 className="font-extrabold text-lg text-white" style={{ fontFamily: "'Playfair Display', serif" }}>{prod.nombre}</h3>
-                      <p className="text-[#f5efe6] text-sm mt-2 font-medium" style={{ fontFamily: "'Lora', serif" }}>{prod.desc}</p>
-                      <p className="text-2xl font-black text-[#e8d5c0] mt-3" style={{ fontFamily: "'Playfair Display', serif" }}>{prod.precio}</p>
-                      <a href="https://wa.me/5356956051" className="inline-block mt-3 bg-[#e8d5c0] text-[#1a0f0a] px-5 py-2 rounded-xl font-bold text-sm hover:bg-white transition" style={{ fontFamily: "'Lora', serif" }}>
-                        Pedir por WhatsApp →
-                      </a>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
-                className="bg-gradient-to-r from-[#c4a580]/20 to-[#e8d5c0]/10 backdrop-blur rounded-2xl p-6 border border-[#e8d5c0]/30 text-center max-w-2xl mx-auto"
-              >
-               
-                <p className="text-[#e8d5c0] font-extrabold text-lg" style={{ fontFamily: "'Playfair Display', serif" }}>
-                  Promoción Especial
-                </p>
-                <p className="text-[#f5efe6] text-sm mt-2 font-medium" style={{ fontFamily: "'Lora', serif" }}>
-                  Si compras <span className="text-[#e8d5c0] font-bold">2 pares o más</span> (pueden ser combinados), te llevas una <span className="text-[#e8d5c0] font-bold">llave de afinación GRATIS</span>.
-                </p>
-                <p className="text-[#f5efe6] text-xs mt-3 font-medium" style={{ fontFamily: "'Lora', serif" }}>
-                  💰 Facilidades de pago: efectivo o transferencia · 📍 Disponible en La Habana
-                </p>
+                    ↓
+                  </motion.span>
+                </motion.a>
               </motion.div>
             </div>
           </section>
+
+          {/* Línea divisoria */}
+          <div className="max-w-2xl mx-auto px-4 py-4">
+            <div className="h-[1px] bg-gradient-to-r from-transparent via-[#c4a580]/50 to-transparent"></div>
+          </div>
+
+          {/* Catálogo */}
+<section id="catalogo" className="py-20 px-4">
+  <div className="max-w-5xl mx-auto">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+      className="text-center mb-6"
+    >
+      <span className="text-[#e8d5c0] font-bold text-sm tracking-widest uppercase" style={{ fontFamily: "'Lora', serif" }}>Catálogo</span>
+      <h2 className="text-3xl md:text-5xl font-extrabold mt-2 mb-4 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
+        Baquetas Disponibles
+      </h2>
+    </motion.div>
+
+    {/* Banner de descuento web */}
+   <motion.div
+  initial={{ opacity: 0, y: -10 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.2 }}
+  className="bg-[#1a0f0a] border border-[#c4a580]/30 rounded-xl py-5 px-6 text-center max-w-2xl mx-auto mb-10 shadow-lg shadow-[#c4a580]/5"
+>
+  <p className="text-[#f5efe6] text-sm tracking-wide" style={{ fontFamily: "'Lora', serif" }}>
+    <span className="text-[#e8d5c0] font-bold">PRECIO WEB</span> · Ahorra <span className="text-white font-bold">$0.50</span> por cada par
+  </p>
+  <p className="text-[#c4a580]/60 text-xs mt-1" style={{ fontFamily: "'Lora', serif" }}>Exclusivo para pedidos desde esta página</p>
+</motion.div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      {[
+        { img: "/fotos/7A-AQJUNONG.jpg", nombre: "AQJUNONG 7A", desc: "Madera de maple. Ligera y rápida. Ideal para jazz, blues y manos pequeñas.", precio: "5.00 USD", precioOriginal: "5.50 USD" },
+        { img: "/fotos/5A-sticks.jpg", nombre: "5A Maple", desc: "Madera de maple. La más versátil. Perfecta para rock, pop y principiantes.", precio: "5.50 USD", precioOriginal: "6.00 USD" },
+        { img: "/fotos/5B-AQJUNONG.jpg", nombre: "AQJUNONG 5B", desc: "Madera de maple. Un poco más gruesa. Más volumen y presencia.", precio: "6.00 USD", precioOriginal: "6.50 USD" },
+      ].map((prod, i) => (
+        <motion.div
+          key={prod.nombre}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.1 }}
+          className="bg-[#2e1f14]/80 backdrop-blur rounded-2xl shadow-sm border border-[#c4a580]/30 hover:shadow-md transition overflow-hidden"
+        >
+          <motion.img
+            src={prod.img}
+            alt={prod.nombre}
+            className="w-full h-48 object-cover"
+            whileHover={{ scale: 1.06 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          />
+          <div className="p-5 text-center">
+            <h3 className="font-extrabold text-lg text-white" style={{ fontFamily: "'Playfair Display', serif" }}>{prod.nombre}</h3>
+            <p className="text-[#f5efe6] text-sm mt-2 font-medium" style={{ fontFamily: "'Lora', serif" }}>{prod.desc}</p>
+            <div className="mt-3">
+              <p className="text-sm text-[#c4a580]/60 line-through" style={{ fontFamily: "'Lora', serif" }}>
+                {prod.precioOriginal}
+              </p>
+              <motion.p
+                whileHover={{ scale: 1.1, color: "#ffffff" }}
+                className="text-2xl font-black text-[#e8d5c0] cursor-default"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                {prod.precio}
+              </motion.p>
+            </div>
+            <a href={mensajeWA} className="inline-block mt-3 bg-[#e8d5c0] text-[#1a0f0a] px-5 py-2 rounded-xl font-bold text-sm hover:bg-white transition" style={{ fontFamily: "'Lora', serif" }}>
+              Pedir por WhatsApp →
+            </a>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+
+    <motion.div
+  initial={{ opacity: 0, y: 10 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.5 }}
+  className="max-w-2xl mx-auto bg-[#1a0f0a] border border-[#c4a580]/25 rounded-xl p-6 text-center shadow-md"
+>
+  <p className="text-[#e8d5c0] text-xs tracking-[0.2em] uppercase mb-3" style={{ fontFamily: "'Lora', serif" }}>
+    Promoción Especial
+  </p>
+  <p className="text-[#f5efe6] text-sm font-medium leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>
+    Al comprar <span className="text-white font-bold">2 pares o más</span>, recibe una <span className="text-white font-bold">llave de afinación</span> sin costo adicional.
+  </p>
+  <p className="text-[#c4a580]/60 text-xs mt-3" style={{ fontFamily: "'Lora', serif" }}>
+    Combínalos como prefieras · Efectivo o transferencia · La Habana
+  </p>
+</motion.div>
+  </div>
+</section>
 
           {/* Contacto */}
           <section id="contacto" className="py-20">
@@ -516,16 +541,16 @@ export default function Home() {
               <h2 className="text-3xl md:text-5xl font-extrabold mt-2 mb-4 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>¿Listo para tus baquetas?</h2>
               <p className="text-[#e8d5c0] mb-10 font-medium" style={{ fontFamily: "'Lora', serif" }}>Escríbeme por WhatsApp. Envíos a toda La Habana.</p>
               <motion.a
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  animate={{ boxShadow: ["0 0 0 0 rgba(232,213,192,0.4)", "0 0 0 20px rgba(232,213,192,0)", "0 0 0 0 rgba(232,213,192,0)"] }}
-  transition={{ repeat: Infinity, duration: 2.5 }}
-  href="https://wa.me/5356956051"
-  className="bg-[#e8d5c0] hover:bg-white text-[#1a0f0a] px-10 py-5 rounded-xl font-bold text-xl transition shadow-xl inline-flex items-center gap-2"
-  style={{ fontFamily: "'Lora', serif" }}
->
-  <Phone size={24} /> Pedir por WhatsApp
-</motion.a>
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                animate={{ boxShadow: ["0 0 0 0 rgba(232,213,192,0.4)", "0 0 0 20px rgba(232,213,192,0)", "0 0 0 0 rgba(232,213,192,0)"] }}
+                transition={{ repeat: Infinity, duration: 2.5 }}
+                href={mensajeWA}
+                className="bg-[#e8d5c0] hover:bg-white text-[#1a0f0a] px-10 py-5 rounded-xl font-bold text-xl transition shadow-xl inline-flex items-center gap-2"
+                style={{ fontFamily: "'Lora', serif" }}
+              >
+                <Phone size={24} /> Pedir por WhatsApp
+              </motion.a>
             </motion.div>
           </section>
 
