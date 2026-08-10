@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import {Analytics} from "@vercel/analytics/react";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,7 +17,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className="bg-[#f5efe6]">{children}</body>
+      <body className="bg-[#f5efe6]">{children} <Analytics/> </body>
     </html>
   );
 }
