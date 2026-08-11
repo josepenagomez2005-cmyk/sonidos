@@ -452,24 +452,58 @@ export default function Home() {
     </motion.div>
 
     {/* Banner de descuento web */}
-   <motion.div
-  initial={{ opacity: 0, y: -10 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0.2 }}
-  className="bg-[#1a0f0a] border border-[#c4a580]/30 rounded-xl py-5 px-6 text-center max-w-2xl mx-auto mb-10 shadow-lg shadow-[#c4a580]/5"
->
-  <p className="text-[#f5efe6] text-sm tracking-wide" style={{ fontFamily: "'Lora', serif" }}>
-    <span className="text-[#e8d5c0] font-bold">PRECIO WEB</span> · Ahorra <span className="text-white font-bold">$0.50</span> por cada par
-  </p>
-  <p className="text-[#c4a580]/60 text-xs mt-1" style={{ fontFamily: "'Lora', serif" }}>Exclusivo para pedidos desde esta página</p>
-</motion.div>
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.2 }}
+      className="max-w-2xl mx-auto mb-10"
+    >
+      <div className="bg-[#1a0f0a] border border-[#c4a580]/25 rounded-xl py-4 px-6 text-center shadow-md">
+        <p className="text-[#e8d5c0] text-xs tracking-[0.2em] uppercase mb-1" style={{ fontFamily: "'Lora', serif" }}>
+          Precio Exclusivo Web
+        </p>
+        <p className="text-[#f5efe6] text-sm" style={{ fontFamily: "'Lora', serif" }}>
+          Ahorra <span className="text-white font-bold">$0.50</span> por cada par al comprar desde esta página
+        </p>
+      </div>
+    </motion.div>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
       {[
-        { img: "/fotos/7A-AQJUNONG.jpg", nombre: "AQJUNONG 7A", desc: "Madera de maple. Ligera y rápida. Ideal para jazz, blues y manos pequeñas.", precio: "5.00 USD", precioOriginal: "5.50 USD" },
-        { img: "/fotos/5A-sticks.jpg", nombre: "5A Maple", desc: "Madera de maple. La más versátil. Perfecta para rock, pop y principiantes.", precio: "5.50 USD", precioOriginal: "6.00 USD" },
-        { img: "/fotos/5B-AQJUNONG.jpg", nombre: "AQJUNONG 5B", desc: "Madera de maple. Un poco más gruesa. Más volumen y presencia.", precio: "6.00 USD", precioOriginal: "6.50 USD" },
+        {
+          img: "/fotos/7A-AQJUNONG.jpg",
+          nombre: "AQJUNONG 7A",
+          desc: "Madera de maple. Ligera y rápida. Ideal para jazz, blues y manos pequeñas.",
+          precio: "5.00 USD",
+          precioOriginal: "5.50 USD",
+          estado: "disponible",
+          estadoTexto: "Disponible",
+          estadoColor:  "bg-green-700/40 text-green-200 border-green-500/50",
+          mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+AQJUNONG+7A.+%C2%BFMe+ayudas%3F",
+        },
+        {
+          img: "/fotos/5A-sticks.jpg",
+          nombre: "5A Maple",
+          desc: "Madera de maple. La más versátil. Perfecta para rock, pop y principiantes.",
+          precio: "5.50 USD",
+          precioOriginal: "6.00 USD",
+          estado: "disponible",
+          estadoTexto: "Disponible",
+          estadoColor:  "bg-green-700/40 text-green-200 border-green-500/50",
+          mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+5A+Maple.+%C2%BFMe+ayudas%3F",
+        },
+        {
+          img: "/fotos/5B-AQJUNONG.jpg",
+          nombre: "AQJUNONG 5B",
+          desc: "Madera de maple. Un poco más gruesa. Más volumen y presencia.",
+          precio: "6.00 USD",
+          precioOriginal: "6.50 USD",
+          estado: "pocas",
+          estadoTexto: "Quedan pocas",
+          estadoColor: "bg-amber-500/20 text-amber-400 border-amber-500/30",
+          mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+AQJUNONG+5B.+%C2%BFMe+ayudas%3F",
+        },
       ].map((prod, i) => (
         <motion.div
           key={prod.nombre}
@@ -477,8 +511,15 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: i * 0.1 }}
-          className="bg-[#2e1f14]/80 backdrop-blur rounded-2xl shadow-sm border border-[#c4a580]/30 hover:shadow-md transition overflow-hidden"
+          className="bg-[#2e1f14]/80 backdrop-blur rounded-2xl shadow-sm border border-[#c4a580]/30 hover:shadow-md transition overflow-hidden relative"
         >
+          {/* Badge de estado */}
+          <div className="absolute top-3 right-3 z-10">
+            <span className={`text-xs px-2.5 py-1 rounded-full font-bold border ${prod.estadoColor}`} style={{ fontFamily: "'Lora', serif" }}>
+              {prod.estadoTexto}
+            </span>
+          </div>
+
           <motion.img
             src={prod.img}
             alt={prod.nombre}
@@ -501,7 +542,7 @@ export default function Home() {
                 {prod.precio}
               </motion.p>
             </div>
-            <a href={mensajeWA} className="inline-block mt-3 bg-[#e8d5c0] text-[#1a0f0a] px-5 py-2 rounded-xl font-bold text-sm hover:bg-white transition" style={{ fontFamily: "'Lora', serif" }}>
+            <a href={prod.mensajeWA} className="inline-block mt-3 bg-[#e8d5c0] text-[#1a0f0a] px-5 py-2 rounded-xl font-bold text-sm hover:bg-white transition" style={{ fontFamily: "'Lora', serif" }}>
               Pedir por WhatsApp →
             </a>
           </div>
@@ -509,23 +550,24 @@ export default function Home() {
       ))}
     </div>
 
+    {/* Promoción */}
     <motion.div
-  initial={{ opacity: 0, y: 10 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0.5 }}
-  className="max-w-2xl mx-auto bg-[#1a0f0a] border border-[#c4a580]/25 rounded-xl p-6 text-center shadow-md"
->
-  <p className="text-[#e8d5c0] text-xs tracking-[0.2em] uppercase mb-3" style={{ fontFamily: "'Lora', serif" }}>
-    Promoción Especial
-  </p>
-  <p className="text-[#f5efe6] text-sm font-medium leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>
-    Al comprar <span className="text-white font-bold">2 pares o más</span>, recibe una <span className="text-white font-bold">llave de afinación</span> sin costo adicional.
-  </p>
-  <p className="text-[#c4a580]/60 text-xs mt-3" style={{ fontFamily: "'Lora', serif" }}>
-    Combínalos como prefieras · Efectivo o transferencia · La Habana
-  </p>
-</motion.div>
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.5 }}
+      className="max-w-2xl mx-auto bg-[#1a0f0a] border border-[#c4a580]/25 rounded-xl p-6 text-center shadow-md"
+    >
+      <p className="text-[#e8d5c0] text-xs tracking-[0.2em] uppercase mb-3" style={{ fontFamily: "'Lora', serif" }}>
+        Promoción Especial
+      </p>
+      <p className="text-[#f5efe6] text-sm font-medium leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>
+        Al comprar <span className="text-white font-bold">2 pares o más</span>, recibe una <span className="text-white font-bold">llave de afinación</span> sin costo adicional.
+      </p>
+      <p className="text-[#c4a580]/60 text-xs mt-3" style={{ fontFamily: "'Lora', serif" }}>
+        Combínalos como prefieras · Efectivo o transferencia · La Habana
+      </p>
+    </motion.div>
   </div>
 </section>
 
