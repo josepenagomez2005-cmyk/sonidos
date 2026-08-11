@@ -21,6 +21,10 @@ export default function Home() {
         backgroundAttachment: "fixed",
       }}
     >
+
+      <h1 className="sr-only">
+  Baquetas Pro — Guía completa de baquetas para bateristas en Cuba. Compra baquetas 5A, 7A, 5B en La Habana con envíos a toda la habana.
+</h1>
       <div className="absolute inset-0 z-0 bg-black/40"></div>
 
       <div className="relative z-10">
@@ -682,6 +686,9 @@ export default function Home() {
             <p className="text-lg font-bold text-[#e8d5c0] mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>🥁 Baquetas Pro</p>
             <p className="text-sm text-[#c4a580] font-medium" style={{ fontFamily: "'Lora', serif" }}>La guía más completa sobre baquetas en español</p>
             <p className="text-xs mt-6 text-[#8b7a6b]" style={{ fontFamily: "'Lora', serif" }}>© 2026 · Todos los derechos reservados</p>
+            <p className="text-[#6b5a4b] text-xs mt-2" style={{ fontFamily: "'Lora', serif" }}>
+  Baquetas disponibles en La Habana, Cuba · Envíos a toda la habana · Pago en efectivo o transferencia
+</p>
           </footer>
 
         </div>
