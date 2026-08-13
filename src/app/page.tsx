@@ -1,10 +1,13 @@
 "use client";
 
-import { Phone, Zap, Shield, Music, Star, BookOpen, ChevronRight } from "lucide-react";
+import { Phone, Zap, Shield, Music, Star, BookOpen, ChevronRight, ChevronDown, Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  const [menuAbierto, setMenuAbierto] = useState(false);
+
   const fadeIn = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
@@ -30,28 +33,48 @@ export default function Home() {
 
       <div className="relative z-10">
         {/* Navbar */}
-        <nav className="bg-[#2e1f14]/80 backdrop-blur border-b border-[#c4a580]/30 sticky top-0 z-50">
-          <div className="max-w-5xl mx-auto flex justify-between items-center p-4">
-            <div className="flex items-center gap-3">
-              <img
-                src="/fotos/baqueta-pro.jpg"
-                alt="Baquetas Pro Logo"
-                className="w-10 h-10 rounded-lg object-cover"
-              />
-              <h1 className="text-xl font-extrabold tracking-tight text-[#f5efe6]" style={{ fontFamily: "'Playfair Display', serif" }}>
-                Baquetas <span className="text-[#e8d5c0]">Pro</span>
-              </h1>
-            </div>
-            <div className="hidden md:flex gap-8 text-sm font-medium text-[#e8d5c0]" style={{ fontFamily: "'Lora', serif" }}>
-              <a href="#numeracion" className="hover:text-white transition">Numeración</a>
-              <a href="#maderas" className="hover:text-white transition">Maderas</a>
-              <a href="#marcas" className="hover:text-white transition">Marcas</a>
-              <a href="#catalogo" className="hover:text-white transition">Catálogo</a>
-              <a href="#resenas" className="hover:text-white transition">Reseñas</a>
-              <a href="#contacto" className="hover:text-white transition">Pedir</a>
-            </div>
-          </div>
-        </nav>
+       <nav className="bg-[#2e1f14]/90 backdrop-blur border-b border-[#c4a580]/30 sticky top-0 z-50">
+  <div className="max-w-5xl mx-auto flex justify-between items-center p-4">
+    <div className="flex items-center gap-3">
+      <img
+        src="/fotos/baqueta-pro.jpg"
+        alt="Baquetas Pro Logo"
+        className="w-10 h-10 rounded-lg object-cover"
+      />
+      <h1 className="text-xl font-extrabold tracking-tight text-[#f5efe6]" style={{ fontFamily: "'Playfair Display', serif" }}>
+        Baquetas <span className="text-[#e8d5c0]">Pro</span>
+      </h1>
+    </div>
+
+    {/* Botón hamburguesa */}
+    <button
+      className="md:hidden text-[#e8d5c0]"
+      onClick={() => setMenuAbierto(!menuAbierto)}
+    >
+      {menuAbierto ? <X size={24} /> : <Menu size={24} />}
+    </button>
+
+    {/* Links desktop */}
+    <div className="hidden md:flex gap-8 text-sm font-medium text-[#e8d5c0]" style={{ fontFamily: "'Lora', serif" }}>
+      <a href="#numeracion" className="hover:text-white transition">Numeración</a>
+      <a href="#maderas" className="hover:text-white transition">Maderas</a>
+      <a href="#marcas" className="hover:text-white transition">Marcas</a>
+      <a href="#catalogo" className="hover:text-white transition">Catálogo</a>
+      <a href="#contacto" className="hover:text-white transition">Pedir</a>
+    </div>
+  </div>
+
+  {/* Menú móvil */}
+  {menuAbierto && (
+    <div className="md:hidden bg-[#2e1f14] border-t border-[#c4a580]/30 p-4 flex flex-col gap-4" style={{ fontFamily: "'Lora', serif" }}>
+      <a href="#numeracion" onClick={() => setMenuAbierto(false)} className="text-[#e8d5c0] hover:text-white transition">Numeración</a>
+      <a href="#maderas" onClick={() => setMenuAbierto(false)} className="text-[#e8d5c0] hover:text-white transition">Maderas</a>
+      <a href="#marcas" onClick={() => setMenuAbierto(false)} className="text-[#e8d5c0] hover:text-white transition">Marcas</a>
+      <a href="#catalogo" onClick={() => setMenuAbierto(false)} className="text-[#e8d5c0] hover:text-white transition">Catálogo</a>
+      <a href="#contacto" onClick={() => setMenuAbierto(false)} className="text-[#e8d5c0] hover:text-white transition">Pedir</a>
+    </div>
+  )}
+</nav>
 
         {/* Hero */}
         <section className="py-20 md:py-28">
@@ -776,6 +799,20 @@ export default function Home() {
               </motion.a>
             </motion.div>
           </section>
+
+          {/* Botón volver arriba */}
+<div className="text-center py-8">
+  <motion.a
+    href="#"
+    className="inline-flex items-center gap-2 bg-transparent hover:bg-[#c4a580]/10 border border-[#c4a580] text-[#e8d5c0] px-6 py-3 rounded-xl font-bold text-sm transition-all duration-300"
+    style={{ fontFamily: "'Lora', serif" }}
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    Volver arriba
+    <ChevronDown size={16} className="rotate-180" />
+  </motion.a>
+</div>
 
           {/* Footer */}
           <footer className="text-center py-10 px-4 border-t border-[#c4a580]/10">
