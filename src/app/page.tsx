@@ -2,6 +2,7 @@
 
 import { Phone, Zap, Shield, Music, Star, BookOpen, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
   const fadeIn = {
@@ -57,7 +58,7 @@ export default function Home() {
           <div className="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <span className="bg-[#e8d5c0] text-[#2e1f14] text-xs font-bold px-4 py-1.5 rounded-full tracking-wider uppercase inline-block mb-6" style={{ fontFamily: "'Lora', serif" }}>
-                🥁 Guía para Bateristas
+                 Guía para Bateristas
               </span>
               <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Todo Sobre<br />
@@ -221,7 +222,7 @@ export default function Home() {
                   img: "/fotos/arce.jpg",
                   nombre: "Arce (Maple)",
                   tag: "Ligero y Cálido",
-                  desc: "La más ligera, aproximadamente 10% menos que el Hickory. Esto permite fabricar baquetas de mayor diámetro sin que resulten pesadas. Sensación de ligereza y respuesta rápida, sonido cálido en platillos. Excelente para bateristas que buscan baquetas gruesas pero ligeras.",
+                  desc: "La más ligera, aproximadamente 10% más que el Hickory. Esto permite fabricar baquetas de mayor diámetro sin que resulten pesadas. Sensación de ligereza y respuesta rápida, sonido cálido en platillos. Excelente para bateristas que buscan baquetas gruesas pero ligeras.",
                   pros: ["Muy ligero", "Sonido cálido", "Respuesta rápida"],
                   genero: "Jazz · Acústico · Práctica",
                 },
@@ -574,6 +575,101 @@ export default function Home() {
     </motion.div>
   </div>
 </section>
+
+{/* Otros productos */}
+<section className="py-10 px-4 bg-[#1a0f0a]/60 border-t border-[#c4a580]/10">
+  <div className="max-w-6xl mx-auto">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+      className="text-center mb-6"
+    >
+      <h2 className="text-xl md:text-2xl font-semibold text-[#e8d5c0]" style={{ fontFamily: "'Playfair Display', serif" }}>
+        Otros productos
+      </h2>
+      <p className="text-[#c4a580]/60 text-xs mt-1" style={{ fontFamily: "'Lora', serif" }}>
+        Atriles y soportes para tu batería
+      </p>
+    </motion.div>
+
+  <div className="flex gap-3 overflow-x-auto scroll-horizontal snap-x snap-mandatory pb-2 -mx-4 px-4">
+  {[
+    {
+      img: "/fotos/hit-hat-Griffin.jpg",
+      nombre: "Hi-Hat Griffin",
+      precio: "75 USD",
+    },
+    {
+      img: "/fotos/atril-ajustable-Griffin.jpg",
+      nombre: "Atril Ajustable Griffin",
+      precio: "71 USD",
+    },
+    {
+      img: "/fotos/atril-recto-Griffin.jpg",
+      nombre: "Atril Recto Griffin",
+      precio: "58 USD",
+    },
+    {
+      img: "/fotos/atril-caja-Griffin.jpg",
+      nombre: "Atril de Caja Griffin",
+      precio: "42 USD",
+    },
+    {
+      img: "/fotos/atril-caja-Yamaha.jpg",
+      nombre: "Atril de Caja Yamaha",
+      precio: "35 USD",
+    },
+  ].map((prod, i) => (
+    <motion.div
+      key={prod.nombre}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: i * 0.06 }}
+      whileHover={{ y: -5, scale: 1.02 }}
+      className="min-w-[180px] md:min-w-[200px] snap-center bg-[#2e1f14]/70 backdrop-blur rounded-xl shadow-sm border border-[#c4a580]/20 hover:shadow-md transition overflow-hidden flex-shrink-0 cursor-pointer"
+    >
+      <img src={prod.img} alt={prod.nombre} className="w-full h-32 object-contain bg-white" />
+      <div className="p-4 text-center">
+        <h3 className="font-bold text-sm text-white" style={{ fontFamily: "'Playfair Display', serif" }}>{prod.nombre}</h3>
+        <p className="text-lg font-black text-[#e8d5c0] mt-2" style={{ fontFamily: "'Playfair Display', serif" }}>{prod.precio}</p>
+      </div>
+    </motion.div>
+  ))}
+
+  {/* Botón Ver atriles */}
+  <Link
+    href="/atriles"
+    className="min-w-[160px] md:min-w-[180px] snap-center self-center flex-shrink-0 flex items-center justify-center"
+  >
+    <motion.div
+      className="bg-transparent hover:bg-[#c4a580]/10 border border-[#c4a580] px-6 py-4 rounded-xl transition-all duration-300 text-center"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      <div className="flex items-center gap-2 justify-center">
+        <span className="text-[#e8d5c0] font-bold text-sm" style={{ fontFamily: "'Lora', serif" }}>
+          Ver atriles
+        </span>
+        <motion.span
+          className="text-[#e8d5c0] text-lg"
+          animate={{ x: [0, 5, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+        >
+          →
+        </motion.span>
+      </div>
+      <span className="text-[#c4a580]/60 text-[10px] block mt-1" style={{ fontFamily: "'Lora', serif" }}>
+        5 productos
+      </span>
+    </motion.div>
+  </Link>
+</div>
+  </div>
+</section>
+
 
 {/* Reseñas + Dejar opinión */}
 <section id="resenas" className="py-20 px-4 max-w-4xl mx-auto">
