@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone, ArrowLeft } from "lucide-react";
+import { Phone, ArrowLeft,ChevronRight, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -114,6 +114,8 @@ export default function Atriles() {
           </motion.div>
         </section>
 
+        
+
         {/* Grid de atriles */}
         <section className="py-12 px-4 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -156,6 +158,61 @@ export default function Atriles() {
           </div>
         </section>
 
+        {/* Consejos y Mantenimiento */}
+<section className="py-16 px-4 max-w-5xl mx-auto">
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    variants={fadeIn}
+    className="text-center mb-10"
+  >
+    <span className="text-[#e8d5c0] font-bold text-sm tracking-widest uppercase" style={{ fontFamily: "'Lora', serif" }}>
+      Aprende
+    </span>
+    <h2 className="text-3xl md:text-4xl font-extrabold mt-2 mb-4 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
+      Cuida tu Hardware
+    </h2>
+    <p className="text-[#f5efe6] max-w-2xl mx-auto font-medium" style={{ fontFamily: "'Lora', serif" }}>
+      La estabilidad y el mantenimiento son tan importantes como tu técnica.
+    </p>
+  </motion.div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {/* Consejos */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.1 }}
+      className="bg-[#2e1f14]/80 backdrop-blur rounded-2xl p-6 md:p-8 shadow-sm border border-[#c4a580]/30 hover:shadow-md transition"
+    >
+      <h3 className="text-xl font-bold text-[#e8d5c0] mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+        💡 Consejos
+      </h3>
+      <p className="text-[#f5efe6] leading-relaxed font-medium" style={{ fontFamily: "'Lora', serif" }}>
+        No existe mayor incomodidad para un baterista que estar tocando y sentir que sus atriles ceden ante el golpeo; empezar la sesión con una distribución perfecta del set y terminar con los cuerpos y platillos completamente desajustados. La inestabilidad no debería ser parte de tu sonido. La arquitectura del hardware debe siempre garantizar una seguridad absoluta bajo cualquier intensidad de golpeo, convirtiendo la rigidez en esa libertad de tocar con la seguridad de que tu equipo responde con la misma firmeza que tu técnica. Por tanto, es recomendable hacerse de un buen set de atriles pues no todos ofrecen tal garantía.
+      </p>
+    </motion.div>
+
+    {/* Mantenimiento */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.2 }}
+      className="bg-[#2e1f14]/80 backdrop-blur rounded-2xl p-6 md:p-8 shadow-sm border border-[#c4a580]/30 hover:shadow-md transition"
+    >
+      <h3 className="text-xl font-bold text-[#e8d5c0] mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+        🔧 Mantenimiento
+      </h3>
+      <p className="text-[#f5efe6] leading-relaxed font-medium" style={{ fontFamily: "'Lora', serif" }}>
+        La acumulación de humedad, polvo y el uso intenso son los principales enemigos del hardware. Las articulaciones y roscas de ajuste sufren un desgaste natural por fricción. Para contrarrestarlo, es fundamental limpiar periódicamente los tubos con un paño de microfibra —preferiblemente seco— y aplicar una micro-gota de aceite lubricante especializado en las bisagras y mecanismos de altura. Este hábito sencillo previene la oxidación, evita la fricción metálica y mantiene el rendimiento de los cierres impecable como el primer día.
+      </p>
+    </motion.div>
+  </div>
+</section>
+
         {/* Contacto */}
         <section className="py-16 px-4">
           <div className="max-w-2xl mx-auto text-center">
@@ -167,8 +224,13 @@ export default function Atriles() {
         </section>
 
         {/* Footer */}
-        <footer className="text-center py-8 px-1 border-t border-[#c4a580]/10">   
-          <p className="text-xs mt-6 text-[#8b7a6b]" style={{ fontFamily: "'Lora', serif" }}>© 2026 · Todos los derechos reservados </p>
+        <footer className="text-center py-8 px-1 border-t border-[#c4a580]/10"> 
+          
+          <p className="text-xs mt-6 text-[#8b7a6b]" style={{ fontFamily: "'Lora', serif" }}><img
+  src="/fotos/logoS.png"
+  alt="SONIDOS - Tienda de Percusión"
+  style={{ height: "40px", width: "auto", margin: "0 auto", display: "block" }}
+/>© 2026 · Todos los derechos reservados </p>
         </footer>
       </div>
     </main>
