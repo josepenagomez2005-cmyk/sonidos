@@ -74,16 +74,20 @@ export default function Atriles() {
       <div className="relative z-10">
         {/* Navbar */}
         <nav className="bg-[#2e1f14]/90 backdrop-blur border-b border-[#c4a580]/30 sticky top-0 z-50">
-          <div className="max-w-5xl mx-auto flex justify-between items-center p-4">
+          <div className="max-w-5xl mx-auto flex justify-between items-center px-4 py-2">
             <div className="flex items-center gap-3">
               <img
                 src="/fotos/baqueta-pro.jpg"
                 alt="Baquetas Pro Logo"
-                className="w-10 h-10 rounded-lg object-cover"
+                className="w-13 h-13 rounded-lg object-cover"
               />
-              <h1 className="text-xl font-extrabold tracking-tight text-[#f5efe6]" style={{ fontFamily: "'Playfair Display', serif" }}>
-                Baquetas <span className="text-[#e8d5c0]">Pro</span>
-              </h1>
+             <a href="/">
+  <img
+    src="/fotos/logoS.png"
+    alt="SONIDOS - Tienda de Percusión"
+    style={{ height: "60px", width: "auto", display: "block" }}
+  />
+</a>
             </div>
             <Link href="/" className="text-[#e8d5c0] hover:text-white transition text-sm font-medium flex items-center gap-1" style={{ fontFamily: "'Lora', serif" }}>
               <ArrowLeft size={16} /> Volver
@@ -163,8 +167,8 @@ export default function Atriles() {
         </section>
 
         {/* Footer */}
-        <footer className="text-center py-8 px-4 border-t border-[#c4a580]/10">
-          <p className="text-sm text-[#c4a580] font-medium" style={{ fontFamily: "'Lora', serif" }}>© 2026 Baquetas Pro · Todos los derechos reservados</p>
+        <footer className="text-center py-8 px-1 border-t border-[#c4a580]/10">   
+          <p className="text-xs mt-6 text-[#8b7a6b]" style={{ fontFamily: "'Lora', serif" }}>© 2026 · Todos los derechos reservados </p>
         </footer>
       </div>
     </main>

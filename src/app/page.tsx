@@ -34,16 +34,20 @@ export default function Home() {
       <div className="relative z-10">
         {/* Navbar */}
        <nav className="bg-[#2e1f14]/90 backdrop-blur border-b border-[#c4a580]/30 sticky top-0 z-50">
-  <div className="max-w-5xl mx-auto flex justify-between items-center p-4">
+  <div className="max-w-5xl mx-auto flex justify-between items-center px-4 py-2">
     <div className="flex items-center gap-3">
       <img
         src="/fotos/baqueta-pro.jpg"
         alt="Baquetas Pro Logo"
-        className="w-10 h-10 rounded-lg object-cover"
+        className="w-13 h-13 rounded-lg object-cover"
       />
-      <h1 className="text-xl font-extrabold tracking-tight text-[#f5efe6]" style={{ fontFamily: "'Playfair Display', serif" }}>
-        Baquetas <span className="text-[#e8d5c0]">Pro</span>
-      </h1>
+      <a href="/">
+  <img
+    src="/fotos/logoS.png"
+    alt="SONIDOS - Tienda de Percusión"
+    style={{ height: "60px", width: "auto", display: "block" }}
+  />
+</a>
     </div>
 
     {/* Botón hamburguesa */}
@@ -610,7 +614,7 @@ export default function Home() {
       className="text-center mb-6"
     >
       <h2 className="text-xl md:text-2xl font-semibold text-[#e8d5c0]" style={{ fontFamily: "'Playfair Display', serif" }}>
-        Otros productos
+       Accesorios
       </h2>
       <p className="text-[#c4a580]/60 text-xs mt-1" style={{ fontFamily: "'Lora', serif" }}>
         Atriles y soportes para tu batería
@@ -816,7 +820,11 @@ export default function Home() {
 
           {/* Footer */}
           <footer className="text-center py-10 px-4 border-t border-[#c4a580]/10">
-            <p className="text-lg font-bold text-[#e8d5c0] mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>🥁 Baquetas Pro</p>
+            <img
+  src="/fotos/logoS.png"
+  alt="SONIDOS - Tienda de Percusión"
+  style={{ height: "40px", width: "auto", margin: "0 auto", display: "block" }}
+/>
             <p className="text-sm text-[#c4a580] font-medium" style={{ fontFamily: "'Lora', serif" }}>La guía más completa sobre baquetas en español</p>
             <p className="text-xs mt-6 text-[#8b7a6b]" style={{ fontFamily: "'Lora', serif" }}>© 2026 · Todos los derechos reservados</p>
             <p className="text-[#6b5a4b] text-xs mt-2" style={{ fontFamily: "'Lora', serif" }}>
