@@ -98,9 +98,9 @@ export default function Home() {
                 <a href="#numeracion" className="bg-[#e8d5c0] text-[#2e1f14] px-8 py-3.5 rounded-xl font-bold hover:bg-white transition shadow-lg" style={{ fontFamily: "'Lora', serif" }}>
                   <BookOpen size={18} className="inline mr-2" />Comenzar Guía
                 </a>
-                <a href={mensajeWA} className="border-2 border-[#e8d5c0] text-[#e8d5c0] px-8 py-3.5 rounded-xl font-bold hover:bg-[#e8d5c0]/20 transition" style={{ fontFamily: "'Lora', serif" }}>
-                  Pedir por WhatsApp
-                </a>
+                <a href="#catalogo" className="bg-[#e8d5c0] text-[#1a0f0a] px-8 py-4 rounded-xl font-bold text-lg transition shadow-xl inline-flex items-center gap-2" style={{ fontFamily: "'Lora', serif" }}>
+  Ver catálogo
+</a>
               </div>
             </motion.div>
             <motion.div
