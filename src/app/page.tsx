@@ -697,6 +697,97 @@ export default function Home() {
   </div>
 </section>
 
+{/* Próximamente */}
+<section className="py-10 px-4 bg-[#1a0f0a]/60 border-t border-[#c4a580]/10">
+  <div className="max-w-6xl mx-auto">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+      className="text-center mb-6"
+    >
+      <h2 className="text-xl md:text-2xl font-semibold text-[#e8d5c0]" style={{ fontFamily: "'Playfair Display', serif" }}>
+        Próximamente
+      </h2>
+      <p className="text-[#c4a580]/60 text-xs mt-1" style={{ fontFamily: "'Lora', serif" }}>
+        Nuevos productos 
+      </p>
+    </motion.div>
+
+    <div className="flex gap-3 overflow-x-auto scroll-horizontal snap-x snap-mandatory pb-2 -mx-4 px-4">
+      {[
+        { 
+          imgs: ["/fotos/baqueteroM.jpg", "/fotos/baqueteroM-1.jpg"], 
+          nombre: "Baquetero", 
+          precio: "28 USD" 
+        },
+        { 
+          imgs: ["/fotos/baqueteroP.jpg", "/fotos/baqueteroP-3.jpg", "/fotos/baqueteroP-2.jpg"], 
+          nombre: "Baquetero Pequeño", 
+          precio: "17 USD" 
+        },
+        { imgs: ["/fotos/baquetas-Timbal.jpg"], nombre: "Baquetas para Timbal", precio: "8.25 USD" },
+        { imgs: ["/fotos/pad8.png"], nombre: "Practice Pad 8\"", precio: "19 USD" },
+        { imgs: ["/fotos/pad12.png"], nombre: "Practice Pad 12\"", precio: "24.75 USD" },
+        { imgs: ["/fotos/parches-Ktaxon.jpg"], nombre: " Pack de Parches", precio: "82.50 USD" },
+      ].map((prod, i) => (
+        <motion.div
+          key={prod.nombre}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.06 }}
+          whileHover={{ y: -5, scale: 1.02 }}
+          className="w-[200px] md:w-[220px] shrink-0 snap-center bg-[#2e1f14]/70 backdrop-blur rounded-xl shadow-sm border border-[#c4a580]/20 hover:shadow-md transition overflow-hidden flex flex-col"
+        >
+          {/* Carrusel interno de imágenes */}
+          <div className="relative h-32 overflow-hidden">
+            <div className="flex h-full overflow-x-auto scroll-horizontal snap-x snap-mandatory">
+              {prod.imgs.map((img, j) => (
+                <img
+                  key={j}
+                  src={img}
+                  alt={`${prod.nombre} ${j + 1}`}
+                  className="w-full h-32 object-contain bg-white snap-center shrink-0"
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="p-4 text-center flex-1 flex flex-col">
+            <h3 className="font-bold text-sm text-white" style={{ fontFamily: "'Playfair Display', serif" }}>{prod.nombre}</h3>
+            <span className="inline-block mt-2 text-xs px-2.5 py-1 rounded-full font-bold border bg-amber-600 text-white border-amber-700" style={{ fontFamily: "'Lora', serif" }}>
+              Próximamente
+            </span>
+            <p className="text-lg font-black text-[#e8d5c0] mt-auto pt-2" style={{ fontFamily: "'Playfair Display', serif" }}>{prod.precio}</p>
+          </div>
+        </motion.div>
+      ))}
+
+      {/* Botón de interés */}
+      <Link
+        href="https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Sonidos+y+quiero+recibir+m%C3%A1s+informaci%C3%B3n+sobre+los+productos+pr%C3%B3ximos.+%C2%BFMe+avisan%3F"
+        className="shrink-0 snap-center self-center flex items-center justify-center"
+      >
+        <motion.div
+          className="bg-transparent hover:bg-[#c4a580]/10 border border-[#c4a580] px-6 py-4 rounded-xl transition-all duration-300 text-center"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <div className="flex items-center gap-2 justify-center">
+            <span className="text-[#e8d5c0] font-bold text-sm" style={{ fontFamily: "'Lora', serif" }}>
+              Click aquí
+            </span>
+          </div>
+          <span className="text-[#c4a580]/60 text-[10px] block mt-1" style={{ fontFamily: "'Lora', serif" }}>
+            para más información
+          </span>
+        </motion.div>
+      </Link>
+    </div>
+  </div>
+</section>
 
 {/* Reseñas + Dejar opinión */}
 <section id="resenas" className="py-20 px-4 max-w-4xl mx-auto">
