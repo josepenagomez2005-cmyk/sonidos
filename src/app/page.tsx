@@ -510,7 +510,7 @@ export default function Home() {
           precio: "5.50 USD",
           precioOriginal: "6.00 USD",
           estado: "disponible",
-          estadoTexto: "Disponible",
+          estadoTexto: "Disponibles",
           estadoColor:  "bg-green-700/40 text-green-200 border-green-500/50",
           mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+AQJUNONG+7A.+%C2%BFMe+ayudas%3F",
         },
@@ -521,8 +521,8 @@ export default function Home() {
           precio: "6.00 USD",
           precioOriginal: "6.50 USD",
           estado: "disponible",
-          estadoTexto: "Disponible",
-          estadoColor:  "bg-green-700/40 text-green-200 border-green-500/50",
+          estadoTexto: "Disponibles solo 2 pares",
+          estadoColor:  "bg-red-600 text-white border-red-700",
           mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+5A+Maple.+%C2%BFMe+ayudas%3F",
         },
         {
@@ -532,8 +532,8 @@ export default function Home() {
           precio: "6.50 USD",
           precioOriginal: "7.00 USD",
           estado: "pocas",
-          estadoTexto: "Quedan pocas",
-          estadoColor: "bg-amber-500/20 text-amber-400 border-amber-500/30",
+          estadoTexto: "Disponibles",
+          estadoColor:  "bg-green-700/40 text-green-200 border-green-500/50",
           mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+AQJUNONG+5B.+%C2%BFMe+ayudas%3F",
         },
       ].map((prod, i) => (
@@ -697,7 +697,7 @@ export default function Home() {
   </div>
 </section>
 
-{/* Próximamente */}
+{/* Nuevos Productos */}
 <section className="py-10 px-4 bg-[#1a0f0a]/60 border-t border-[#c4a580]/10">
   <div className="max-w-6xl mx-auto">
     <motion.div
@@ -708,29 +708,20 @@ export default function Home() {
       className="text-center mb-6"
     >
       <h2 className="text-xl md:text-2xl font-semibold text-[#e8d5c0]" style={{ fontFamily: "'Playfair Display', serif" }}>
-        Próximamente
+        Nuevos Productos
       </h2>
       <p className="text-[#c4a580]/60 text-xs mt-1" style={{ fontFamily: "'Lora', serif" }}>
-        Nuevos productos 
+        Ampliando el catálogo
       </p>
     </motion.div>
 
     <div className="flex gap-3 overflow-x-auto scroll-horizontal snap-x snap-mandatory pb-2 -mx-4 px-4">
       {[
-        { 
-          imgs: ["/fotos/baqueteroM.jpg", "/fotos/baqueteroM-1.jpg"], 
-          nombre: "Baquetero", 
-          precio: "28 USD" 
-        },
-        { 
-          imgs: ["/fotos/baqueteroP.jpg", "/fotos/baqueteroP-3.jpg", "/fotos/baqueteroP-2.jpg"], 
-          nombre: "Baquetero Pequeño", 
-          precio: "17 USD" 
-        },
-        { imgs: ["/fotos/baquetas-Timbal.jpg"], nombre: "Baquetas para Timbal", precio: "8.25 USD" },
-        { imgs: ["/fotos/pad8.png"], nombre: "Practice Pad 8\"", precio: "19 USD" },
-        { imgs: ["/fotos/pad12.png"], nombre: "Practice Pad 12\"", precio: "24.75 USD" },
-        { imgs: ["/fotos/parches-Ktaxon.jpg"], nombre: " Pack de Parches", precio: "82.50 USD" },
+        { img: "/fotos/baqueteroM.jpg", nombre: "Baquetero", precio: "28 USD" },
+        { img: "/fotos/baquetas-Timbal.jpg", nombre: "Baquetas para Timbal", precio: "8.25 USD" },
+        { img: "/fotos/pad12.png", nombre: "Practice Pad 12'", precio: "24.75 USD" },
+        { img: "/fotos/baqueteroP.jpg", nombre: "Baquetero Pequeño", precio: "17 USD" },
+        
       ].map((prod, i) => (
         <motion.div
           key={prod.nombre}
@@ -741,34 +732,19 @@ export default function Home() {
           whileHover={{ y: -5, scale: 1.02 }}
           className="w-[200px] md:w-[220px] shrink-0 snap-center bg-[#2e1f14]/70 backdrop-blur rounded-xl shadow-sm border border-[#c4a580]/20 hover:shadow-md transition overflow-hidden flex flex-col"
         >
-          {/* Carrusel interno de imágenes */}
-          <div className="relative h-32 overflow-hidden">
-            <div className="flex h-full overflow-x-auto scroll-horizontal snap-x snap-mandatory">
-              {prod.imgs.map((img, j) => (
-                <img
-                  key={j}
-                  src={img}
-                  alt={`${prod.nombre} ${j + 1}`}
-                  className="w-full h-32 object-contain bg-white snap-center shrink-0"
-                />
-              ))}
-            </div>
-          </div>
-
+          <img src={prod.img} alt={prod.nombre} className="w-full h-32 object-contain bg-white" />
           <div className="p-4 text-center flex-1 flex flex-col">
             <h3 className="font-bold text-sm text-white" style={{ fontFamily: "'Playfair Display', serif" }}>{prod.nombre}</h3>
-            <span className="inline-block mt-2 text-xs px-2.5 py-1 rounded-full font-bold border bg-amber-600 text-white border-amber-700" style={{ fontFamily: "'Lora', serif" }}>
-              Próximamente
-            </span>
+            
             <p className="text-lg font-black text-[#e8d5c0] mt-auto pt-2" style={{ fontFamily: "'Playfair Display', serif" }}>{prod.precio}</p>
           </div>
         </motion.div>
       ))}
 
-      {/* Botón de interés */}
+      {/* Botón Ver todos */}
       <Link
-        href="https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Sonidos+y+quiero+recibir+m%C3%A1s+informaci%C3%B3n+sobre+los+productos+pr%C3%B3ximos.+%C2%BFMe+avisan%3F"
-        className="shrink-0 snap-center self-center flex items-center justify-center"
+        href="/nuevos-productos"
+        className="min-w-[160px] md:min-w-[180px] snap-center self-center flex-shrink-0 flex items-center justify-center"
       >
         <motion.div
           className="bg-transparent hover:bg-[#c4a580]/10 border border-[#c4a580] px-6 py-4 rounded-xl transition-all duration-300 text-center"
@@ -777,15 +753,91 @@ export default function Home() {
         >
           <div className="flex items-center gap-2 justify-center">
             <span className="text-[#e8d5c0] font-bold text-sm" style={{ fontFamily: "'Lora', serif" }}>
-              Click aquí
+              Ver todos
             </span>
+            <motion.span
+              className="text-[#e8d5c0] text-lg"
+              animate={{ x: [0, 5, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5 }}
+            >
+              →
+            </motion.span>
           </div>
           <span className="text-[#c4a580]/60 text-[10px] block mt-1" style={{ fontFamily: "'Lora', serif" }}>
-            para más información
+            6 productos
           </span>
         </motion.div>
       </Link>
     </div>
+  </div>
+</section>
+
+{/* Oferta Especial */}
+<section className="py-12 px-4 bg-[#1a0f0a]/60 border-t border-[#c4a580]/10">
+  <div className="max-w-4xl mx-auto">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+      className="text-center mb-6"
+    >
+      <h2 className="text-xl md:text-2xl font-semibold text-[#e8d5c0]" style={{ fontFamily: "'Playfair Display', serif" }}>
+         Oferta Especial
+      </h2>
+    </motion.div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.2 }}
+      className="bg-[#2e1f14]/70 backdrop-blur rounded-xl border border-[#c4a580]/30 p-5 md:p-6"
+    >
+      {/* Productos con signos + */}
+      <div className="flex flex-wrap items-center justify-center gap-3 mb-5">
+        <div className="text-center">
+          <img src="/fotos/hi-hat(Meinl).jpg" alt="Hi-Hat Meinl" className="w-16 h-16 md:w-20 md:h-20 object-contain bg-white rounded-lg mx-auto" />
+          <p className="text-[#f5efe6] text-[10px] mt-1 font-medium" style={{ fontFamily: "'Lora', serif" }}>Hi-Hat Meinl HCS 13"</p>
+          <p className="text-[#c4a580] text-[9px]" style={{ fontFamily: "'Lora', serif" }}>Usado, excelente estado</p>
+        </div>
+
+        <span className="text-[#c4a580] text-xl">+</span>
+
+        <div className="text-center">
+          <img src="/fotos/hit-hat-Griffin.jpg" alt="Atril Griffin" className="w-16 h-16 md:w-20 md:h-20 object-contain bg-white rounded-lg mx-auto" />
+          <p className="text-[#f5efe6] text-[10px] mt-1 font-medium" style={{ fontFamily: "'Lora', serif" }}>Atril de Hi-Hat</p>
+          <p className="text-[#c4a580] text-[9px]" style={{ fontFamily: "'Lora', serif" }}>Nuevo, en caja sellada</p>
+        </div>
+
+        <span className="text-[#c4a580] text-xl">+</span>
+
+        <div className="text-center">
+          <img src="/fotos/5B.jpg" alt="Baquetas" className="w-16 h-16 md:w-20 md:h-20 object-contain bg-white rounded-lg mx-auto" />
+          <p className="text-[#f5efe6] text-[10px] mt-1 font-medium" style={{ fontFamily: "'Lora', serif" }}>Par de Baquetas</p>
+          <p className="text-[#c4a580] text-[9px]" style={{ fontFamily: "'Lora', serif" }}>Incluidas</p>
+        </div>
+
+        <span className="text-[#c4a580] text-xl">+</span>
+
+       <div className="text-center">
+  <img src="/fotos/Llave-afinacion.jpg" alt="Llave de Afinación" className="w-16 h-16 md:w-20 md:h-20 object-contain bg-white rounded-lg mx-auto" />
+  <p className="text-[#f5efe6] text-[10px] mt-1 font-medium" style={{ fontFamily: "'Lora', serif" }}>Llave de Afinación</p>
+  <p className="text-[#c4a580] text-[9px]" style={{ fontFamily: "'Lora', serif" }}>Incluida</p>
+</div>
+      </div>
+
+      {/* Precio + botón */}
+      <div className="text-center border-t border-[#c4a580]/20 pt-5">
+        <p className="text-[#c4a580] text-xs mb-1" style={{ fontFamily: "'Lora', serif" }}>Todo por solo</p>
+        <p className="text-3xl md:text-4xl font-black text-[#e8d5c0] mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
+          163 USD
+        </p>
+        <a href="https://wa.me/5356956051?text=Hola%2C+vi+la+oferta+del+paquete+Hi-Hat+y+quiero+comprarlo.+%C2%BFMe+ayudan%3F" className="inline-block bg-[#e8d5c0] hover:bg-white text-[#1a0f0a] px-6 py-2.5 rounded-lg font-bold text-sm transition" style={{ fontFamily: "'Lora', serif" }}>
+          Pedir por WhatsApp →
+        </a>
+      </div>
+    </motion.div>
   </div>
 </section>
 
