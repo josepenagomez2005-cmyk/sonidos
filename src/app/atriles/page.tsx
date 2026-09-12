@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone, ArrowLeft,ChevronRight, ChevronDown } from "lucide-react";
+import { Phone, ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -43,20 +43,11 @@ export default function Atriles() {
       nombre: "Atril de Caja Griffin",
       desc: "Soporte para caja con base estable. Diseñado para mantener tu caja segura durante las sesiones más intensas.",
       precio: "42 USD",
-      estado: "Disponible",
-      estadoColor: "bg-green-600 text-white border-green-700",
+      estado: "Agotado",
+      estadoColor: "bg-red-600 text-white border-red-700",
       mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+el+Atril+de+Caja+Griffin.+%C2%BFMe+ayudas%3F",
     },
-    {
-      img: "/fotos/atril-caja-Yamaha.jpg",
-      nombre: "Atril de Caja Yamaha",
-      desc: "Atril de caja de la reconocida marca Yamaha. Calidad y durabilidad garantizadas para tu batería.",
-      precio: "35 USD",
-      precioOriginal: "47 USD",
-      estado: "Usado",
-      estadoColor: "bg-red-600 text-white border-red-700",
-      mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+el+Atril+de+Caja+Yamaha.+%C2%BFMe+ayudas%3F",
-    },
+   
   ];
 
   return (

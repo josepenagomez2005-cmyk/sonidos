@@ -521,7 +521,7 @@ export default function Home() {
           precio: "6.00 USD",
           precioOriginal: "6.50 USD",
           estado: "disponible",
-          estadoTexto: "Disponibles solo 2 pares",
+          estadoTexto: "Agotadas",
           estadoColor:  "bg-red-600 text-white border-red-700",
           mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+5A+Maple.+%C2%BFMe+ayudas%3F",
         },
@@ -643,11 +643,7 @@ export default function Home() {
       nombre: "Atril de Caja Griffin",
       precio: "42 USD",
     },
-    {
-      img: "/fotos/atril-caja-Yamaha.jpg",
-      nombre: "Atril de Caja Yamaha",
-      precio: "35 USD",
-    },
+    
   ].map((prod, i) => (
     <motion.div
       key={prod.nombre}
@@ -689,7 +685,7 @@ export default function Home() {
         </motion.span>
       </div>
       <span className="text-[#c4a580]/60 text-[10px] block mt-1" style={{ fontFamily: "'Lora', serif" }}>
-        5 productos
+       4 productos
       </span>
     </motion.div>
   </Link>
@@ -719,7 +715,7 @@ export default function Home() {
       {[
         { img: "/fotos/baqueteroM.jpg", nombre: "Baquetero", precio: "28 USD" },
         { img: "/fotos/baquetas-Timbal.jpg", nombre: "Baquetas para Timbal", precio: "8.25 USD" },
-        { img: "/fotos/pad12.png", nombre: "Practice Pad 12'", precio: "24.75 USD" },
+        { img: "/fotos/pad12.png", nombre: "Practice Pad 12'", precio: "25 USD" },
         { img: "/fotos/baqueteroP.jpg", nombre: "Baquetero Pequeño", precio: "17 USD" },
         
       ].map((prod, i) => (
@@ -798,7 +794,7 @@ export default function Home() {
       <div className="flex flex-wrap items-center justify-center gap-3 mb-5">
         <div className="text-center">
           <img src="/fotos/hi-hat(Meinl).jpg" alt="Hi-Hat Meinl" className="w-16 h-16 md:w-20 md:h-20 object-contain bg-white rounded-lg mx-auto" />
-          <p className="text-[#f5efe6] text-[10px] mt-1 font-medium" style={{ fontFamily: "'Lora', serif" }}>Hi-Hat Meinl HCS 13"</p>
+          <p className="text-[#f5efe6] text-[10px] mt-1 font-medium" style={{ fontFamily: "'Lora', serif" }}>Hit-Hat Meinl HCS 13"</p>
           <p className="text-[#c4a580] text-[9px]" style={{ fontFamily: "'Lora', serif" }}>Usado, excelente estado</p>
         </div>
 
@@ -806,7 +802,7 @@ export default function Home() {
 
         <div className="text-center">
           <img src="/fotos/hit-hat-Griffin.jpg" alt="Atril Griffin" className="w-16 h-16 md:w-20 md:h-20 object-contain bg-white rounded-lg mx-auto" />
-          <p className="text-[#f5efe6] text-[10px] mt-1 font-medium" style={{ fontFamily: "'Lora', serif" }}>Atril de Hi-Hat</p>
+          <p className="text-[#f5efe6] text-[10px] mt-1 font-medium" style={{ fontFamily: "'Lora', serif" }}>Atril de Hit-Hat</p>
           <p className="text-[#c4a580] text-[9px]" style={{ fontFamily: "'Lora', serif" }}>Nuevo, en caja sellada</p>
         </div>
 

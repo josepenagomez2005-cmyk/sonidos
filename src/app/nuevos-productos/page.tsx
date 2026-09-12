@@ -16,6 +16,8 @@ export default function NuevosProductos() {
       nombre: "Baquetero", 
       desc: "Bolso acolchado para transportar tus baquetas con seguridad.",
       precio: "28 USD",
+      estado: "Disponible",
+      estadoColor: "bg-green-600 text-white border-green-700",
       mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Sonidos+y+quiero+pedir+el+Baquetero.+%C2%BFMe+ayudan%3F",
     },
     { 
@@ -23,6 +25,8 @@ export default function NuevosProductos() {
       nombre: "Baquetero Pequeño", 
       desc: "Estuche compacto para baquetas. Ideal para llevar a ensayos.",
       precio: "17 USD",
+      estado: "Disponible",
+      estadoColor: "bg-green-600 text-white border-green-700",
       mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Sonidos+y+quiero+pedir+el+Baquetero+Peque%C3%B1o.+%C2%BFMe+ayudan%3F",
     },
     { 
@@ -30,6 +34,8 @@ export default function NuevosProductos() {
       nombre: "Baquetas para Timbal", 
       desc: "Baquetas diseñadas para timbal. Mayor alcance y control.",
       precio: "8.25 USD",
+      estado: "Disponible",
+      estadoColor: "bg-green-600 text-white border-green-700",
       mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Sonidos+y+quiero+pedir+las+Baquetas+para+Timbal.+%C2%BFMe+ayudan%3F",
     },
     { 
@@ -37,20 +43,26 @@ export default function NuevosProductos() {
       nombre: "Practice Pad 8\"", 
       desc: "Pad de práctica de 8 pulgadas. Perfecto para calentar y estudiar.",
       precio: "19 USD",
+      estado: "Agotado",
+      estadoColor: "bg-red-600 text-white border-red-700",
       mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Sonidos+y+quiero+pedir+el+Practice+Pad+8+puLGadas.+%C2%BFMe+ayudan%3F",
     },
     { 
       imgs: ["/fotos/pad12.png"], 
       nombre: "Practice Pad 12\"", 
       desc: "Pad de práctica de 12 pulgadas. Superficie realista.",
-      precio: "24.75 USD",
+      precio: "25 USD",
+      estado: "Disponible",
+      estadoColor: "bg-green-600 text-white border-green-700",
       mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Sonidos+y+quiero+pedir+el+Practice+Pad+12+puLGadas.+%C2%BFMe+ayudan%3F",
     },
     { 
-      imgs: ["/fotos/parches-Ktaxon.jpg"], 
+      imgs: ["/fotos/parches-Ktaxon.avif"], 
       nombre: "Pack de Parches", 
-      desc: "Parches de calidad para tu batería. Sonido definido.",
-      precio: "82.50 USD",
+      desc: "Parches de calidad para tu batería. Sonido definido. Disponibles todos excepto el 22\". (En caso de compra por unidad -> 23 usd)",
+      precio: "83 USD",
+      estado: "Disponible",
+      estadoColor: "bg-green-600 text-white border-green-700",
       mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Sonidos+y+quiero+pedir+el+Pack+de+Parches.+%C2%BFMe+ayudan%3F",
     },
   ];
@@ -115,8 +127,15 @@ export default function NuevosProductos() {
                 transition={{ delay: i * 0.08 }}
                 className="bg-[#2e1f14]/80 backdrop-blur rounded-2xl shadow-sm border border-[#c4a580]/30 hover:shadow-md transition overflow-hidden flex flex-col"
               >
-                {/* Carrusel interno si hay varias imágenes */}
+                {/* Imagen con carrusel interno y badge */}
                 <div className="relative h-48 overflow-hidden">
+                  {/* Badge sobre la imagen */}
+                  <div className="absolute top-3 right-3 z-10">
+                    <span className={`text-xs px-2.5 py-1 rounded-full font-bold border ${prod.estadoColor}`} style={{ fontFamily: "'Lora', serif" }}>
+                      {prod.estado}
+                    </span>
+                  </div>
+
                   <div className="flex h-full overflow-x-auto scroll-horizontal snap-x snap-mandatory">
                     {prod.imgs.map((img, j) => (
                       <img
