@@ -16,8 +16,8 @@ export default function Atriles() {
       nombre: "Hi-Hat Griffin",
       desc: "Soporte de hi-hat profesional. Base estable, ajuste de altura y tensión. Perfecto para uso intensivo en presentaciones y estudio.",
       precio: "75 USD",
-      estado: "Disponible",
-     estadoColor: "bg-green-600 text-white border-green-700",
+      estado: "Agotado",
+     estadoColor: "bg-red-600 text-white border-red-700",
       mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+el+Hi-Hat+Griffin.+%C2%BFMe+ayudas%3F",
     },
     {
@@ -25,8 +25,8 @@ export default function Atriles() {
       nombre: "Atril Ajustable Griffin",
       desc: "Atril versátil con altura regulable. Se adapta a cualquier configuración de batería. Ideal para músicos que buscan flexibilidad.",
       precio: "71 USD",
-      estado: "Disponible",
-      estadoColor: "bg-green-600 text-white border-green-700",
+      estado: "Agotado",
+      estadoColor: "bg-red-600 text-white border-red-700",
       mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+el+Atril+Ajustable+Griffin.+%C2%BFMe+ayudas%3F",
     },
     {
@@ -34,8 +34,8 @@ export default function Atriles() {
       nombre: "Atril Recto Griffin",
       desc: "Atril recto resistente y fácil de ajustar. Construcción sólida para un rendimiento confiable en cualquier escenario.",
       precio: "58 USD",
-      estado: "Disponible",
-      estadoColor: "bg-green-600 text-white border-green-700",
+      estado: "Agotado",
+      estadoColor: "bg-red-600 text-white border-red-700",
       mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+el+Atril+Recto+Griffin.+%C2%BFMe+ayudas%3F",
     },
     {

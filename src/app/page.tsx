@@ -714,7 +714,7 @@ export default function Home() {
     <div className="flex gap-3 overflow-x-auto scroll-horizontal snap-x snap-mandatory pb-2 -mx-4 px-4">
       {[
         { img: "/fotos/baqueteroM.jpg", nombre: "Baquetero", precio: "28 USD" },
-        { img: "/fotos/baquetas-Timbal.jpg", nombre: "Baquetas para Timbal", precio: "8.25 USD" },
+        { img: "/fotos/baquetas-Timbal.jpg", nombre: "Baquetas para Timbal", precio: "9 USD" },
         { img: "/fotos/pad12.png", nombre: "Practice Pad 12'", precio: "25 USD" },
         { img: "/fotos/baqueteroP.jpg", nombre: "Baquetero Pequeño", precio: "17 USD" },
         
@@ -768,74 +768,7 @@ export default function Home() {
   </div>
 </section>
 
-{/* Oferta Especial */}
-<section className="py-12 px-4 bg-[#1a0f0a]/60 border-t border-[#c4a580]/10">
-  <div className="max-w-4xl mx-auto">
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeIn}
-      className="text-center mb-6"
-    >
-      <h2 className="text-xl md:text-2xl font-semibold text-[#e8d5c0]" style={{ fontFamily: "'Playfair Display', serif" }}>
-         Oferta Especial
-      </h2>
-    </motion.div>
 
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: 0.2 }}
-      className="bg-[#2e1f14]/70 backdrop-blur rounded-xl border border-[#c4a580]/30 p-5 md:p-6"
-    >
-      {/* Productos con signos + */}
-      <div className="flex flex-wrap items-center justify-center gap-3 mb-5">
-        <div className="text-center">
-          <img src="/fotos/hi-hat(Meinl).jpg" alt="Hi-Hat Meinl" className="w-16 h-16 md:w-20 md:h-20 object-contain bg-white rounded-lg mx-auto" />
-          <p className="text-[#f5efe6] text-[10px] mt-1 font-medium" style={{ fontFamily: "'Lora', serif" }}>Hit-Hat Meinl HCS 13"</p>
-          <p className="text-[#c4a580] text-[9px]" style={{ fontFamily: "'Lora', serif" }}>Usado, excelente estado</p>
-        </div>
-
-        <span className="text-[#c4a580] text-xl">+</span>
-
-        <div className="text-center">
-          <img src="/fotos/hit-hat-Griffin.jpg" alt="Atril Griffin" className="w-16 h-16 md:w-20 md:h-20 object-contain bg-white rounded-lg mx-auto" />
-          <p className="text-[#f5efe6] text-[10px] mt-1 font-medium" style={{ fontFamily: "'Lora', serif" }}>Atril de Hit-Hat</p>
-          <p className="text-[#c4a580] text-[9px]" style={{ fontFamily: "'Lora', serif" }}>Nuevo, en caja sellada</p>
-        </div>
-
-        <span className="text-[#c4a580] text-xl">+</span>
-
-        <div className="text-center">
-          <img src="/fotos/5B.jpg" alt="Baquetas" className="w-16 h-16 md:w-20 md:h-20 object-contain bg-white rounded-lg mx-auto" />
-          <p className="text-[#f5efe6] text-[10px] mt-1 font-medium" style={{ fontFamily: "'Lora', serif" }}>Par de Baquetas</p>
-          <p className="text-[#c4a580] text-[9px]" style={{ fontFamily: "'Lora', serif" }}>Incluidas</p>
-        </div>
-
-        <span className="text-[#c4a580] text-xl">+</span>
-
-       <div className="text-center">
-  <img src="/fotos/Llave-afinacion.jpg" alt="Llave de Afinación" className="w-16 h-16 md:w-20 md:h-20 object-contain bg-white rounded-lg mx-auto" />
-  <p className="text-[#f5efe6] text-[10px] mt-1 font-medium" style={{ fontFamily: "'Lora', serif" }}>Llave de Afinación</p>
-  <p className="text-[#c4a580] text-[9px]" style={{ fontFamily: "'Lora', serif" }}>Incluida</p>
-</div>
-      </div>
-
-      {/* Precio + botón */}
-      <div className="text-center border-t border-[#c4a580]/20 pt-5">
-        <p className="text-[#c4a580] text-xs mb-1" style={{ fontFamily: "'Lora', serif" }}>Todo por solo</p>
-        <p className="text-3xl md:text-4xl font-black text-[#e8d5c0] mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
-          163 USD
-        </p>
-        <a href="https://wa.me/5356956051?text=Hola%2C+vi+la+oferta+del+paquete+Hi-Hat+y+quiero+comprarlo.+%C2%BFMe+ayudan%3F" className="inline-block bg-[#e8d5c0] hover:bg-white text-[#1a0f0a] px-6 py-2.5 rounded-lg font-bold text-sm transition" style={{ fontFamily: "'Lora', serif" }}>
-          Pedir por WhatsApp →
-        </a>
-      </div>
-    </motion.div>
-  </div>
-</section>
 
 {/* Reseñas + Dejar opinión */}
 <section id="resenas" className="py-20 px-4 max-w-4xl mx-auto">
