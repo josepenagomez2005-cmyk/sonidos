@@ -131,11 +131,6 @@ export default function Atriles() {
                   <h3 className="font-extrabold text-lg text-white" style={{ fontFamily: "'Playfair Display', serif" }}>{prod.nombre}</h3>
                   <p className="text-[#f5efe6] text-sm mt-2 font-medium leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>{prod.desc}</p>
                   <div className="mt-3">
-                    {prod.precioOriginal && (
-                      <p className="text-sm text-[#c4a580]/60 line-through" style={{ fontFamily: "'Lora', serif" }}>
-                        {prod.precioOriginal}
-                      </p>
-                    )}
                     <p className="text-2xl font-black text-[#e8d5c0]" style={{ fontFamily: "'Playfair Display', serif" }}>
                       {prod.precio}
                     </p>
