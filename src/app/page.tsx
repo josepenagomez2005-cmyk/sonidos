@@ -503,39 +503,65 @@ export default function Home() {
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
       {[
+         {
+          img: "/fotos/5A-roble.jpg",
+          nombre: "AQJUNONG 5A",
+          desc: "Baquetas de roble. Resistentes y muy versátiles. Perfectas para quienes buscan mayor durabilidad y peso. ",
+          precio: "8.00 USD",
+          precioOriginal: "8.50 USD",
+          estado: "disponible",
+          estadoTexto: "Disponibles",
+          estadoColor:  "bg-green-700/40 text-green-200 border-green-500/50",
+          claseImagen: "object-top",
+          mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+AQJUNONG+5A.+%C2%BFMe+ayudas%3F",
+        },
         {
-          img: "/fotos/7A-AQJUNONG.jpg",
-          nombre: "AQJUNONG 7A",
-          desc: "Madera de maple. Ligera y rápida. Ideal para jazz, blues y manos pequeñas.",
-          precio: "5.50 USD",
-          precioOriginal: "6.00 USD",
+          img: "/fotos/5B-AQJUNONG.jpg",
+          nombre: "AQJUNONG 5B",
+          desc: "Madera de maple. Un poco más gruesas, aunque livianas. Idóneas para principiantes.",
+          precio: "6.00 USD",
+          estado: "pocas",
+          estadoTexto: "Disponibles",
+          estadoColor:  "bg-green-700/40 text-green-200 border-green-500/50",
+          claseImagen: "object-top",
+          mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+AQJUNONG+5B.+%C2%BFMe+ayudas%3F",
+        },
+        {
+          img: "/fotos/7A-roble.jpg",
+          nombre: "AQJUNONG 7A Roble",
+          desc: "Fabricadas con madera de roble. Finas, delgadas, y a la vez resistentes. Calidad asegurada.",
+          precio: "7.00 USD",
+          precioOriginal: "7.50 USD",
           estado: "disponible",
           estadoTexto: "Disponibles",
           estadoColor:  "bg-green-700/40 text-green-200 border-green-500/50",
           mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+AQJUNONG+7A.+%C2%BFMe+ayudas%3F",
         },
         {
-          img: "/fotos/5A-sticks.jpg",
-          nombre: "5A Maple",
-          desc: "Madera de maple. La más versátil. Perfecta para rock, pop y principiantes.",
-          precio: "6.00 USD",
-          precioOriginal: "6.50 USD",
+          img: "/fotos/7A-AQJUNONG.jpg",
+          nombre: "AQJUNONG 7A Maple",
+          desc: "Madera de maple. Ligera y rápida. Ideal para niños y principiantes.",
+          precio: "5.00 USD",
           estado: "disponible",
-          estadoTexto: "Agotadas",
-          estadoColor:  "bg-red-600 text-white border-red-700",
-          mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+5A+Maple.+%C2%BFMe+ayudas%3F",
+          estadoTexto: "Disponibles",
+          estadoColor:  "bg-green-700/10 text-green-200 border-green-500/50",
+          claseImagen: "object-[center_42%] ",
+          mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+AQJUNONG+7A.+%C2%BFMe+ayudas%3F",
         },
         {
-          img: "/fotos/5B-AQJUNONG.jpg",
-          nombre: "AQJUNONG 5B",
-          desc: "Madera de maple. Un poco más gruesa. Más volumen y presencia.",
+          img: "/fotos/5A-sticks.jpg",
+          nombre: "5A Maple",
+          desc: "Deseadas por aquellos que combinan ligereza y versatilidad. Hechas de madera de maple.",
           precio: "6.50 USD",
-          precioOriginal: "7.00 USD",
-          estado: "pocas",
+          estado: "disponible",
           estadoTexto: "Disponibles",
-          estadoColor:  "bg-green-700/40 text-green-200 border-green-500/50",
-          mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+AQJUNONG+5B.+%C2%BFMe+ayudas%3F",
+          estadoColor:  "bg-green-0 text-green-900 border-green-700",
+          claseImagen: "object-[center_6%]",
+          mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+5A+Maple.+%C2%BFMe+ayudas%3F",
         },
+        
+        
+       
       ].map((prod, i) => (
         <motion.div
           key={prod.nombre}
@@ -555,7 +581,7 @@ export default function Home() {
           <motion.img
             src={prod.img}
             alt={prod.nombre}
-            className="w-full h-48 object-cover"
+            className={`w-full h-70 object-cover ${prod.claseImagen || "object-center"} bg-white`}
             whileHover={{ scale: 1.06 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           />
