@@ -36,11 +36,6 @@ export default function Home() {
        <nav className="bg-[#2e1f14]/90 backdrop-blur border-b border-[#c4a580]/30 sticky top-0 z-50">
   <div className="max-w-5xl mx-auto flex justify-between items-center px-4 py-2">
     <div className="flex items-center gap-3">
-      <img
-        src="/fotos/baqueta-pro.jpg"
-        alt="Baquetas Pro Logo"
-        className="w-13 h-13 rounded-lg object-cover"
-      />
       <a href="/">
   <img
     src="/fotos/logoS.png"
@@ -650,24 +645,34 @@ export default function Home() {
   <div className="flex gap-3 overflow-x-auto scroll-horizontal snap-x snap-mandatory pb-2 -mx-4 px-4">
   {[
     {
-      img: "/fotos/hit-hat-Griffin.jpg",
-      nombre: "Hi-Hat Griffin",
-      precio: "75 USD",
+      img: "/fotos/H250.jpg",
+      nombre: "Hi-Hat Mapex",
+      precio: "92 USD",
     },
     {
-      img: "/fotos/atril-ajustable-Griffin.jpg",
-      nombre: "Atril Ajustable Griffin",
-      precio: "71 USD",
+      img: "/fotos/S250.jpg",
+      nombre: "Atril de Caja Mapex",
+      precio: "50 USD",
     },
     {
-      img: "/fotos/atril-recto-Griffin.jpg",
-      nombre: "Atril Recto Griffin",
-      precio: "58 USD",
+      img: "/fotos/B250.jpg",
+      nombre: "Atril Ajustable Mapex",
+      precio: "81 USD",
     },
     {
-      img: "/fotos/atril-caja-Griffin.jpg",
-      nombre: "Atril de Caja Griffin",
-      precio: "42 USD",
+      img: "/fotos/P250.jpg",
+      nombre: "Pedal de Bombo Mapex",
+      precio: "78 USD",
+    },
+    {
+      img: "/fotos/C250.jpg",
+      nombre: "Atril Recto Mapex",
+      precio: "67 USD",
+    },
+    {
+      img: "/fotos/T400.jpg",
+      nombre: "Banqueta Mapex",
+      precio: "85 USD",
     },
     
   ].map((prod, i) => (
@@ -711,7 +716,7 @@ export default function Home() {
         </motion.span>
       </div>
       <span className="text-[#c4a580]/60 text-[10px] block mt-1" style={{ fontFamily: "'Lora', serif" }}>
-       4 productos
+       6 productos
       </span>
     </motion.div>
   </Link>

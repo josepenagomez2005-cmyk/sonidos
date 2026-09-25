@@ -53,7 +53,7 @@ export default function NuevosProductos() {
       desc: "Pad de práctica de 12 pulgadas. Superficie realista.",
       precio: "25 USD",
       estado: "Agotado",
-      estadoColor: "bg-green-600 text-white border-green-700",
+      estadoColor: "bg-red-600 text-white border-red-700",
       mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Sonidos+y+quiero+pedir+el+Practice+Pad+12+puLGadas.+%C2%BFMe+ayudan%3F",
     },
     { 
