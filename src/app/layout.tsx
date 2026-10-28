@@ -18,7 +18,11 @@ export default function RootLayout({
      <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="google-site-verification" content="anM4fHARqY-IkW-G8ZEXXTWG9nY9S8n4aANZS2sqLFI" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link 
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" 
+  rel="stylesheet" 
+/>
+  
 </head>
       <body className="bg-[#f5efe6]">{children} <Analytics/> </body>
     </html>
