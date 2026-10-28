@@ -44,7 +44,7 @@ const SpotlightCard = ({ children, className }: { children: React.ReactNode, cla
 export default function Home() {
   const banners = [
     { id: 1, titulo: "Baquetas AQJUNONG 5A", subtitulo: "La Más Vendida", descripcion: "La reina de la versatilidad.", imagen: "/fotos/5A-roble.jpg", link: "/baquetas" },
-    { id: 2, titulo: "Pack Completo de Hi-Hat", subtitulo: "Oferta Especial", descripcion: "Todo por 163 USD. ¡Llave y baquetas de regalo!", imagen: "/fotos/h250.jpg", link: "#oferta" },   
+    { id: 2, titulo: "Pack Completo de Hi-Hat", subtitulo: "Oferta Especial", descripcion: "Todo por 163 USD. ¡Llave y baquetas de regalo!", imagen: "/fotos/H250.jpg", link: "#oferta" },   
     { id: 3, titulo: "Nuevos Baqueteros", subtitulo: "Novedades", descripcion: "Lleva tus baquetas seguras. Disponibles ya.", imagen: "/fotos/baqueteroM.jpg", link: "/nuevos-productos" },
     { id: 4, titulo: "Llave de Afinación Gratis", subtitulo: "Promoción", descripcion: "Compra 2 pares o más y te la llevas gratis.", imagen: "/fotos/hero.jpg", link: "/baquetas" },
     { id: 5, titulo: "Atriles Mapex", subtitulo: "Equipamiento", descripcion: "Calidad profesional para tu batería.", imagen: "/fotos/set-gibraltar.jpg", link: "/atriles" }
