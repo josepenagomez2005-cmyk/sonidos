@@ -498,6 +498,18 @@ export default function Home() {
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
       {[
+        {
+          img: "/fotos/5A-sticks.jpg",
+          nombre: "5A Maple",
+          desc: "Deseadas por aquellos que combinan ligereza y versatilidad. Hechas de madera de maple.",
+          precio: "6.50 USD",
+          estado: "disponible",
+          estadoTexto: "2 pares en stock",
+          estadoColor:  "bg-green-0 text-green-900 border-green-700",
+          claseImagen: "object-[center_6%]",
+          mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+5A+Maple.+%C2%BFMe+ayudas%3F",
+        },
+
          {
           img: "/fotos/5A-roble.jpg",
           nombre: "AQJUNONG 5A",
@@ -505,8 +517,8 @@ export default function Home() {
           precio: "8.00 USD",
           precioOriginal: "8.50 USD",
           estado: "disponible",
-          estadoTexto: "Disponibles",
-          estadoColor:  "bg-green-700/40 text-green-200 border-green-500/50",
+          estadoTexto: "Agotadas",
+          estadoColor:  "bg-red-600 text-white border-red-700",
           claseImagen: "object-top",
           mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+AQJUNONG+5A.+%C2%BFMe+ayudas%3F",
         },
@@ -516,22 +528,12 @@ export default function Home() {
           desc: "Madera de maple. Un poco más gruesas, aunque livianas. Idóneas para principiantes.",
           precio: "6.00 USD",
           estado: "pocas",
-          estadoTexto: "Disponibles",
-          estadoColor:  "bg-green-700/40 text-green-200 border-green-500/50",
+          estadoTexto: "Agotadas",
+          estadoColor:  "bg-red-600 text-white border-red-700",
           claseImagen: "object-top",
           mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+AQJUNONG+5B.+%C2%BFMe+ayudas%3F",
         },
-        {
-          img: "/fotos/7A-roble.jpg",
-          nombre: "AQJUNONG 7A Roble",
-          desc: "Fabricadas con madera de roble. Finas, delgadas, y a la vez resistentes. Calidad asegurada.",
-          precio: "7.00 USD",
-          precioOriginal: "7.50 USD",
-          estado: "disponible",
-          estadoTexto: "Disponibles",
-          estadoColor:  "bg-green-700/40 text-green-200 border-green-500/50",
-          mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+AQJUNONG+7A.+%C2%BFMe+ayudas%3F",
-        },
+
         {
           img: "/fotos/7A-AQJUNONG.jpg",
           nombre: "AQJUNONG 7A Maple",
@@ -543,17 +545,20 @@ export default function Home() {
           claseImagen: "object-[center_42%] ",
           mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+AQJUNONG+7A.+%C2%BFMe+ayudas%3F",
         },
+        
         {
-          img: "/fotos/5A-sticks.jpg",
-          nombre: "5A Maple",
-          desc: "Deseadas por aquellos que combinan ligereza y versatilidad. Hechas de madera de maple.",
-          precio: "6.50 USD",
+          img: "/fotos/7A-roble.jpg",
+          nombre: "AQJUNONG 7A Roble",
+          desc: "Fabricadas con madera de roble. Finas, delgadas, y a la vez resistentes. Calidad asegurada.",
+          precio: "7.00 USD",
+          precioOriginal: "7.50 USD",
           estado: "disponible",
-          estadoTexto: "Disponibles",
-          estadoColor:  "bg-green-0 text-green-900 border-green-700",
-          claseImagen: "object-[center_6%]",
-          mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+5A+Maple.+%C2%BFMe+ayudas%3F",
+          estadoTexto: "Agotadas",
+          estadoColor:  "bg-red-600 text-white border-red-700",
+          mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Baquetas+Pro+y+quiero+pedir+las+AQJUNONG+7A.+%C2%BFMe+ayudas%3F",
         },
+        
+        
         
         
        

@@ -34,8 +34,8 @@ export default function NuevosProductos() {
       nombre: "Baquetas para Timbal", 
       desc: "Baquetas diseñadas para timbal. Mayor alcance y control.",
       precio: "9 USD",
-      estado: "Disponible",
-      estadoColor: "bg-green-600 text-white border-green-700",
+      estado: "Agotadas",
+      estadoColor: "bg-red-600 text-white border-red-700",
       mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Sonidos+y+quiero+pedir+las+Baquetas+para+Timbal.+%C2%BFMe+ayudan%3F",
     },
     { 
@@ -59,8 +59,8 @@ export default function NuevosProductos() {
     { 
       imgs: ["/fotos/parches-Ktaxon.avif"], 
       nombre: "Pack de Parches", 
-      desc: "Parches de calidad para tu batería. Sonido definido. Disponibles todos excepto el 22\". (En caso de compra por unidad -> 23 usd)",
-      precio: "83 USD",
+      desc: "Parches de calidad para tu batería. Sonido definido. Disponibles 10\" , 14\" y 16\".",
+      precio: "23 USD  c/u",
       estado: "Disponible",
       estadoColor: "bg-green-600 text-white border-green-700",
       mensajeWA: "https://wa.me/5356956051?text=Hola%2C+vi+la+p%C3%A1gina+de+Sonidos+y+quiero+pedir+el+Pack+de+Parches.+%C2%BFMe+ayudan%3F",

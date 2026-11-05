@@ -44,10 +44,10 @@ const SpotlightCard = ({ children, className }: { children: React.ReactNode, cla
 export default function Home() {
   const banners = [
     { id: 1, titulo: "Baquetas AQJUNONG 5A", subtitulo: "La Más Vendida", descripcion: "La reina de la versatilidad.", imagen: "/fotos/5A-roble.jpg", link: "/baquetas" },
-    { id: 2, titulo: "Pack Completo de Hi-Hat", subtitulo: "Oferta Especial", descripcion: "Todo por 163 USD. ¡Llave y baquetas de regalo!", imagen: "/fotos/H250.jpg", link: "#oferta" },   
-    { id: 3, titulo: "Nuevos Baqueteros", subtitulo: "Novedades", descripcion: "Lleva tus baquetas seguras. Disponibles ya.", imagen: "/fotos/baqueteroM.jpg", link: "/nuevos-productos" },
+    { id: 2, titulo: "Atril Mapex + Splash Sabian AAX + llave de Afinación", subtitulo: "Oferta Especial", descripcion: "Todo por 205 USD.", imagen: "/fotos/Oferta1.jpg", link:"https://wa.me/5356956051?text=Hola%2C+vi+la+oferta+del+Atril+Mapex+y+el+Splash+Sabian-AAX+y+estoy+realmente+interesado." },  
+    { id: 3, titulo: "Platillos BEATELLO", subtitulo: "Novedades", descripcion: "Platos listos para ser estrenados. Disponibles ya!!", imagen: "/fotos/oferta2.jpg", link: "/platillos" },
     { id: 4, titulo: "Llave de Afinación Gratis", subtitulo: "Promoción", descripcion: "Compra 2 pares o más y te la llevas gratis.", imagen: "/fotos/hero.jpg", link: "/baquetas" },
-    { id: 5, titulo: "Atriles Mapex", subtitulo: "Equipamiento", descripcion: "Calidad profesional para tu batería.", imagen: "/fotos/set-gibraltar.jpg", link: "/atriles" }
+    { id: 5, titulo: "Atriles y Soportes", subtitulo: "Equipamiento", descripcion: "Calidad profesional para tu batería.", imagen: "/fotos/set-gibraltar.jpg", link: "/atriles" }
   ];
 
   const fadeIn = {
@@ -65,6 +65,21 @@ export default function Home() {
       window.open(link, "_blank");
     }, 1500); 
   };
+
+  // --- LÓGICA DEL CARRUSEL DE PLATILLOS ---
+const [platilloIndex, setPlatilloIndex] = useState(0);
+
+const platillosData = [
+  { img: "/fotos/crashB.jpg", nombre: "Crash Beatello 16\"", precio: "58 USD", desc: "Brillo y proyección profesional." },
+  { img: "/fotos/trashB.jpg", nombre: "Trash Crash Beatello 18\"", precio: "58 USD", desc: "Brillo y proyección profesional." },
+  { img: "/fotos/splashAAX.jpg", nombre: "Splash Sabian AAX", precio: "140 USD", desc: "Splash Gama Alta, sonido espectacular " },
+  { img: "/fotos/rideB.jpg", nombre: "Ride Beatello 20\"", precio: "65 USD", desc: "El estándar preciso en platillos." }, 
+  { img: "/fotos/chinaB.jpg", nombre: "China Beatello 18\"", precio: "55 USD", desc: "Sonido de impacto necesario en todo set" },
+  { img: "/fotos/splashB.jpg", nombre: "Splash Beatello 8\"", precio: "32 USD", desc: "La mejor relación calidad-precio." }, 
+];
+
+const nextPlatillo = () => setPlatilloIndex((prev) => (prev + 1) % platillosData.length);
+const prevPlatillo = () => setPlatilloIndex((prev) => (prev - 1 + platillosData.length) % platillosData.length);
 
   // --- LÓGICA DEL CARRUSEL PRINCIPAL ---
   const autoplayRef = useRef(
@@ -118,7 +133,7 @@ export default function Home() {
               <div className="animate-marquee flex">
                 <span className="mx-4 text-[#e8d5c0] text-xs md:text-sm font-normal italic whitespace-nowrap" style={{ fontFamily: "'Lora', serif" }}>
                   Nueva sección disponible pronto... "Conoces acerca de los in-ears KZ?"    &nbsp; • &nbsp;
-                  Próximamente: "Set de Platillos BEATELLO, de siete piezas" &nbsp; • &nbsp;
+                  Próximamente: "Pads de Práctica" &nbsp; • &nbsp;
                   AL comprar +2 pares de baquetas lleva gratis una "Llave de Afinación" en su primera compra &nbsp; • &nbsp;
                 </span>
                 <span className="mx-4 text-[#e8d5c0] text-xs md:text-sm font-normal italic whitespace-nowrap" style={{ fontFamily: "'Lora', serif" }}>
@@ -154,9 +169,9 @@ export default function Home() {
                         <span className="bg-[#e8d5c0] text-[#1a0f0a] text-[10px] font-bold px-2.5 py-0.5 rounded-full tracking-wider uppercase inline-block mb-2" style={{ fontFamily: "'Lora', serif" }}>
                           {banner.subtitulo}
                         </span>
-                        <h1 className="text-2xl md:text-[26px] font-extrabold text-white mb-1.5 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
-                          {banner.titulo}
-                        </h1>
+                        <h1 className="text-base md:text-lg font-semibold text-white mb-1.5 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+  {banner.titulo}
+</h1>
                         <p className="text-[#f5efe6] text-xs md:text-sm mb-1 font-medium line-clamp-2" style={{ fontFamily: "'Lora', serif" }}>
                           {banner.descripcion}
                         </p>
@@ -350,7 +365,7 @@ export default function Home() {
 <section className="py-10 px-4">
   <div className="max-w-6xl mx-auto">
     <div className="text-center mb-6">
-      <h2 className="text-xl md:text-2xl font-semibold text-[#e8d5c0]" style={{ fontFamily: "'Playfair Display', serif" }}>Nuevos Productos</h2>
+      <h2 className="text-xl md:text-2xl font-semibold text-[#e8d5c0]" style={{ fontFamily: "'Playfair Display', serif" }}>Otros Productos</h2>
       <p className="text-[#c4a580]/60 text-xs mt-1" style={{ fontFamily: "'Lora', serif" }}>Ampliando el catálogo</p>
     </div>
 
@@ -385,6 +400,105 @@ export default function Home() {
     </div>
   </div>
 </section>  
+
+{/* SECCIÓN INDEPENDIENTE: PLATILLOS (Carrusel de Colección) */}
+<section className="py-16 px-4 max-w-5xl mx-auto">
+  
+  <motion.div 
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    variants={fadeIn}
+    className="text-center mb-10"
+  >
+    <span className="text-[#c4a580] font-bold text-sm tracking-widest uppercase" style={{ fontFamily: "'Lora', serif" }}>
+      Nueva Categoría
+    </span>
+    <h2 className="text-3xl md:text-4xl font-extrabold mt-2 mb-4 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
+      Platillos
+    </h2>
+  </motion.div>
+
+  {/* La Tarjeta Grande */}
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#2e1f14] via-[#1a0f0a] to-[#2e1f14] border border-[#c4a580]/30 shadow-2xl group"
+  >
+    {/* Efecto de luz de fondo */}
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(196,165,128,0.1),transparent_50%)]"></div>
+    
+    <div className="relative z-10 flex flex-col md:flex-row items-center justify-between p-8 md:p-12 gap-8">
+      
+      {/* Texto y Botón */}
+      <div className="max-w-md text-center md:text-left flex-1">
+        <h3 className="text-2xl md:text-4xl font-extrabold text-white mb-4 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+          Dale brillo a tu <span className="text-[#e8d5c0] italic">música</span>
+        </h3>
+        <p className="text-[#f5efe6]/70 text-sm md:text-base mb-8 leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>
+          Desde el crash más potente hasta el ride más sutil. Explora nuestra colección de platillos.
+        </p>
+        <Link 
+          href="/platillos" 
+          className="inline-flex items-center gap-2 bg-[#e8d5c0] text-[#1a0f0a] px-8 py-3.5 rounded-xl font-bold text-base hover:bg-white transition shadow-xl hover:scale-105 transform duration-300"
+          style={{ fontFamily: "'Lora', serif" }}
+        >
+          Ver Catálogo Completo <ArrowRight size={18} />
+        </Link>
+      </div>
+
+      {/* EL CARRUSEL INTERNO */}
+      <div className="flex-1 w-full relative flex items-center justify-center">
+        
+        {/* Flecha Izquierda */}
+        <button 
+          onClick={prevPlatillo}
+          className="absolute left-0 md:left-4 z-20 bg-[#1a0f0a]/80 border border-[#c4a580]/30 text-[#c4a580] hover:text-white hover:bg-[#c4a580] hover:border-[#c4a580] p-2 md:p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+        >
+          <ChevronDown size={24} className="rotate-90" />
+        </button>
+
+        {/* Imagen del Platillo Actual */}
+        <div className="relative w-56 h-56 md:w-72 md:h-72 flex-shrink-0">
+          <div className="absolute inset-0 bg-[#c4a580]/20 rounded-full blur-3xl"></div>
+          
+          {/* La imagen cambia con una animación de rotación suave */}
+          <motion.img 
+            key={platilloIndex}
+            initial={{ opacity: 0, rotate: -15, scale: 0.9 }}
+            animate={{ opacity: 1, rotate: 0, scale: 1 }}
+            transition={{ duration: 0.5, type: "spring" }}
+            src={platillosData[platilloIndex].img} 
+            alt={platillosData[platilloIndex].nombre} 
+            className="relative z-10 w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]" 
+          />
+        </div>
+
+        {/* Flecha Derecha */}
+        <button 
+          onClick={nextPlatillo}
+          className="absolute right-0 md:right-4 z-20 bg-[#1a0f0a]/80 border border-[#c4a580]/30 text-[#c4a580] hover:text-white hover:bg-[#c4a580] hover:border-[#c4a580] p-2 md:p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+        >
+          <ChevronDown size={24} className="-rotate-90" />
+        </button>
+
+        {/* Texto flotante con el nombre y precio del platillo */}
+        <motion.div 
+          key={`text-${platilloIndex}`}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 z-20 bg-[#1a0f0a] border border-[#c4a580]/40 px-4 py-1.5 rounded-full whitespace-nowrap shadow-lg"
+        >
+          <span className="text-[#e8d5c0] text-xs font-bold" style={{ fontFamily: "'Lora', serif" }}>
+            {platillosData[platilloIndex].nombre} — {platillosData[platilloIndex].precio}
+          </span>
+        </motion.div>
+      </div>
+      
+    </div>
+  </motion.div>
+</section>
 
 {/* SECCIÓN: ¿BUSCAS ALGO MÁS? (Servicios + Sugerencias integrados) */}
 <section className="py-16 px-4 max-w-5xl mx-auto">
