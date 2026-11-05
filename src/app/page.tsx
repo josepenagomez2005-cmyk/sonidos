@@ -45,7 +45,7 @@ export default function Home() {
   const banners = [
     { id: 1, titulo: "Baquetas AQJUNONG 5A", subtitulo: "La Más Vendida", descripcion: "La reina de la versatilidad.", imagen: "/fotos/5A-roble.jpg", link: "/baquetas" },
     { id: 2, titulo: "Atril Mapex + Splash Sabian AAX + llave de Afinación", subtitulo: "Oferta Especial", descripcion: "Todo por 205 USD.", imagen: "/fotos/Oferta1.jpg", link:"https://wa.me/5356956051?text=Hola%2C+vi+la+oferta+del+Atril+Mapex+y+el+Splash+Sabian-AAX+y+estoy+realmente+interesado." },  
-    { id: 3, titulo: "Platillos BEATELLO", subtitulo: "Novedades", descripcion: "Platos listos para ser estrenados. Disponibles ya!!", imagen: "/fotos/oferta2.jpg", link: "/platillos" },
+    { id: 3, titulo: "Platillos BEATELLO", subtitulo: "Novedades", descripcion: "Platos listos para ser estrenados. Disponibles ya!!", imagen: "/fotos/oferta11.jpg", link: "/platillos" },
     { id: 4, titulo: "Llave de Afinación Gratis", subtitulo: "Promoción", descripcion: "Compra 2 pares o más y te la llevas gratis.", imagen: "/fotos/hero.jpg", link: "/baquetas" },
     { id: 5, titulo: "Atriles y Soportes", subtitulo: "Equipamiento", descripcion: "Calidad profesional para tu batería.", imagen: "/fotos/set-gibraltar.jpg", link: "/atriles" }
   ];
