@@ -6,6 +6,7 @@ import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useCallback, useEffect, useState, useRef } from "react";
+import InstallBanner from "@/components/InstallBanner";
 
 // --- COMPONENTE SPOTLIGHT CARD ---
 const SpotlightCard = ({ children, className }: { children: React.ReactNode, className?: string }) => {
@@ -616,6 +617,7 @@ const prevPlatillo = () => setPlatilloIndex((prev) => (prev - 1 + platillosData.
           <span className="text-sm font-bold" style={{ fontFamily: "'Lora', serif" }}>Abriendo WhatsApp...</span>
         </div>
       </div>
+      <InstallBanner/>
     </main>
   );
 }
