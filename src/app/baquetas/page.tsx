@@ -79,7 +79,7 @@ export default function Home() {
       {/* Subtítulos */}
       <div className="space-y-4 mb-8">
         <p className="text-[#f5efe6] text-lg leading-relaxed font-medium" style={{ fontFamily: "'Lora', serif" }}>
-          La madera correcta, el peso adecuado y la medida correcta.
+          La madera correcta, el peso adecuado y la medida a tu gusto.
         </p>
         <p className="text-[#c4a580] text-base font-semibold italic border-l-2 border-[#c4a580] pl-3" style={{ fontFamily: "'Lora', serif" }}>
           ¿No sabes cuál elegir? Aquí te traemos una guía para instruirte.
