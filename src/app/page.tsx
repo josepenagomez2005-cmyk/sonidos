@@ -1,7 +1,7 @@
 "use client";
 
-import { ShoppingBag, Music, Wrench, Star, ArrowRight, Flame, Phone, ChevronDown } from "lucide-react";
-import { motion } from "framer-motion";
+import { ShoppingBag, Music, Wrench, Star, ArrowRight, Flame, Phone, ChevronDown, ChevronLeft,ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -72,10 +72,10 @@ const [platilloIndex, setPlatilloIndex] = useState(0);
 
 const platillosData = [
   { img: "/fotos/crashB.jpg", nombre: "Crash Beatello 16\"", precio: "58 USD", desc: "Brillo y proyección profesional." },
-  { img: "/fotos/trashB.jpg", nombre: "Trash Crash Beatello 18\"", precio: "58 USD", desc: "Brillo y proyección profesional." },
-  { img: "/fotos/splashAAX.jpg", nombre: "Splash Sabian AAX", precio: "140 USD", desc: "Splash Gama Alta, sonido espectacular " },
+  { img: "/fotos/splashAAX.jpg", nombre: "Splash Sabian AAX", precio: "130 USD", desc: "Splash Gama Alta, sonido espectacular " },
   { img: "/fotos/rideB.jpg", nombre: "Ride Beatello 20\"", precio: "65 USD", desc: "El estándar preciso en platillos." }, 
   { img: "/fotos/chinaB.jpg", nombre: "China Beatello 18\"", precio: "55 USD", desc: "Sonido de impacto necesario en todo set" },
+  { img: "/fotos/trashB.jpg", nombre: "Trash Crash Beatello 18\"", precio: "58 USD", desc: "Brillo y proyección profesional." },
   { img: "/fotos/splashB.jpg", nombre: "Splash Beatello 8\"", precio: "32 USD", desc: "La mejor relación calidad-precio." }, 
 ];
 
@@ -134,12 +134,12 @@ const prevPlatillo = () => setPlatilloIndex((prev) => (prev - 1 + platillosData.
               <div className="animate-marquee flex">
                 <span className="mx-4 text-[#e8d5c0] text-xs md:text-sm font-normal italic whitespace-nowrap" style={{ fontFamily: "'Lora', serif" }}>
                   Nueva sección disponible pronto... "Conoces acerca de los in-ears KZ?"    &nbsp; • &nbsp;
-                  Próximamente: "Pads de Práctica" &nbsp; • &nbsp;
+                  Próximamente: "Baquetas Vic Firth" &nbsp; • &nbsp;
                   AL comprar +2 pares de baquetas lleva gratis una "Llave de Afinación" en su primera compra &nbsp; • &nbsp;
                 </span>
                 <span className="mx-4 text-[#e8d5c0] text-xs md:text-sm font-normal italic whitespace-nowrap" style={{ fontFamily: "'Lora', serif" }}>
                   Nueva sección disponible pronto... "Conoces acerca de los in-ears KZ?"    &nbsp; • &nbsp;
-                  Próximamente: "Set de Platillos BEATELLO, de siete piezas" &nbsp; • &nbsp;
+                  Próximamente: "Baquetas Vic Firth" &nbsp; • &nbsp;
                   AL comprar +2 pares de baquetas lleva gratis una "Llave de Afinación" en su primera compra &nbsp; • &nbsp;
                 </span>
               </div>
@@ -241,16 +241,16 @@ const prevPlatillo = () => setPlatilloIndex((prev) => (prev - 1 + platillosData.
     {/* Producto 2 */}
     <div 
       className="bg-[#2e1f14]/80 backdrop-blur border border-[#c4a580]/30 rounded-xl overflow-hidden group hover:border-[#e8d5c0] transition-all flex flex-col cursor-pointer"
-      onClick={(e) => handleWhatsAppClick(e as any, "https://wa.me/5356956051?text=Hola%2C+quiero+pedir+el+Practice+Pad+12")}
+      onClick={(e) => handleWhatsAppClick(e as any, "https://wa.me/5356956051?text=Hola%2C+quiero+pedir+el+Practice+Pad+8")}
     >
       <div className="relative h-48 bg-white flex items-center justify-center p-4">
-        <img src="/fotos/pad12.png" alt="Practice Pad 12" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
+        <img src="/fotos/pad8.jpg" alt="Practice Pad 8" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
       </div>
       <div className="p-4 flex flex-col flex-grow">
-        <h3 className="text-lg font-bold text-white mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>Practice Pad 12"</h3>
+        <h3 className="text-lg font-bold text-white mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>Practice Pad 8"</h3>
         <p className="text-[#c4a580] text-xs mb-4" style={{ fontFamily: "'Lora', serif" }}>El favorito para practicar en casa.</p>
         <div className="flex justify-between items-center mt-auto">
-          <span className="text-xl font-black text-[#e8d5c0]" style={{ fontFamily: "'Playfair Display', serif" }}>25.00 USD</span>
+          <span className="text-xl font-black text-[#e8d5c0]" style={{ fontFamily: "'Playfair Display', serif" }}>21.00 USD</span>
           <button className="bg-[#e8d5c0] hover:bg-white text-[#1a0f0a] px-3 py-1.5 rounded-lg font-bold text-xs transition" style={{ fontFamily: "'Lora', serif" }}>Pedir</button>
         </div>
       </div>
@@ -288,12 +288,13 @@ const prevPlatillo = () => setPlatilloIndex((prev) => (prev - 1 + platillosData.
 
     <div className="flex gap-3 overflow-x-auto scroll-horizontal snap-x snap-mandatory pb-2 -mx-4 px-4">
       {[
+        { img: "/fotos/tronoDrums.jpg", nombre: "Banqueta de Drums", precio: "69 USD" },
         { img: "/fotos/H250.jpg", nombre: "Hi-Hat Mapex", precio: "92 USD" },
         { img: "/fotos/S250.jpg", nombre: "Atril de Caja Mapex", precio: "50 USD" },
-        { img: "/fotos/B250.jpg", nombre: "Atril Ajustable Mapex", precio: "81 USD" },
-        { img: "/fotos/P250.jpg", nombre: "Pedal de Bombo Mapex", precio: "78 USD" },
+        { img: "/fotos/pedalBombo.jpg", nombre: "Pedal de Bombo", precio: "60 USD" },
+        { img: "/fotos/B250.jpg", nombre: "Atril Ajustable Mapex", precio: "79 USD" },
         { img: "/fotos/C250.jpg", nombre: "Atril Recto Mapex", precio: "67 USD" },
-        { img: "/fotos/T400.jpg", nombre: "Banqueta Mapex", precio: "85 USD" },
+        
       ].map((prod, i) => (
         <div
           key={prod.nombre}
@@ -372,10 +373,11 @@ const prevPlatillo = () => setPlatilloIndex((prev) => (prev - 1 + platillosData.
 
     <div className="flex gap-3 overflow-x-auto scroll-horizontal snap-x snap-mandatory pb-2 -mx-4 px-4">
       {[
-        { img: "/fotos/baqueteroM.jpg", nombre: "Baquetero", precio: "28 USD" },
+        { img: "/fotos/ZSN2.jpg", nombre: "In-ears KZ ZSN PRO 2", precio: "45 USD" },  
         { img: "/fotos/baquetas-Timbal.jpg", nombre: "Baquetas para Timbal", precio: "9 USD" },
-        { img: "/fotos/pad12.png", nombre: "Practice Pad 12'", precio: "25 USD" },
-        { img: "/fotos/baqueteroP.jpg", nombre: "Baquetero Pequeño", precio: "17 USD" },
+        { img: "/fotos/pad8.jpg", nombre: "Practice Pad 8\"", precio: "21 USD" },
+        { img: "/fotos/baqueteroM.jpg", nombre: "Baquetero", precio: "28 USD" },
+        
       ].map((prod, i) => (
         <div
           key={prod.nombre}
@@ -402,103 +404,160 @@ const prevPlatillo = () => setPlatilloIndex((prev) => (prev - 1 + platillosData.
   </div>
 </section>  
 
-{/* SECCIÓN INDEPENDIENTE: PLATILLOS (Carrusel de Colección) */}
-<section className="py-16 px-4 max-w-5xl mx-auto">
-  
-  <motion.div 
+{/* SECCIÓN: PLATILLOS (Escaparate Estilo Vitrina Clara) */}
+<section className="py-12 px-4 max-w-5xl mx-auto">
+
+  {/* Encabezado */}
+  <motion.div
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: true }}
+    viewport={{ once: true, margin: "-80px" }}
     variants={fadeIn}
-    className="text-center mb-10"
+    className="text-center mb-8"
   >
-    <span className="text-[#c4a580] font-bold text-sm tracking-widest uppercase" style={{ fontFamily: "'Lora', serif" }}>
-      Nueva Categoría
-    </span>
-    <h2 className="text-3xl md:text-4xl font-extrabold mt-2 mb-4 text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
+    
+    <h1 className="text-xl md:text-2xl font-semibold text-[#e8d5c0]"
+        style={{ fontFamily: "'Playfair Display', serif" }}>
       Platillos
-    </h2>
+    </h1>
+    <p className="text-[#c4a580]/60 text-xs mt-1"
+       style={{ fontFamily: "'Lora', serif" }}>
+      Crash, ride y splash. Platillos listos para estrenar.
+    </p>
   </motion.div>
 
-  {/* La Tarjeta Grande */}
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }}
+  {/* Contenedor Principal del Carrusel */}
+  <motion.div
+    initial={{ opacity: 0, y: 12 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#2e1f14] via-[#1a0f0a] to-[#2e1f14] border border-[#c4a580]/30 shadow-2xl group"
+    viewport={{ once: true, margin: "-80px" }}
+    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+    tabIndex={0}
+    onKeyDown={(e) => {
+      if (e.key === "ArrowLeft") prevPlatillo();
+      if (e.key === "ArrowRight") nextPlatillo();
+    }}
+    className="relative overflow-hidden rounded-2xl bg-[#2e1f14]/70 backdrop-blur border border-[#c4a580]/20 px-6 py-8 md:px-10 md:py-10 outline-none focus-visible:ring-2 focus-visible:ring-[#c4a580]/40"
   >
-    {/* Efecto de luz de fondo */}
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(196,165,128,0.1),transparent_50%)]"></div>
-    
-    <div className="relative z-10 flex flex-col md:flex-row items-center justify-between p-8 md:p-12 gap-8">
-      
-      {/* Texto y Botón */}
-      <div className="max-w-md text-center md:text-left flex-1">
-        <h3 className="text-2xl md:text-4xl font-extrabold text-white mb-4 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
-          Dale brillo a tu <span className="text-[#e8d5c0] italic">música</span>
-        </h3>
-        <p className="text-[#f5efe6]/70 text-sm md:text-base mb-8 leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>
-          Desde el crash más potente hasta el ride más sutil. Explora nuestra colección de platillos.
-        </p>
-        <Link 
-          href="/platillos" 
-          className="inline-flex items-center gap-2 bg-[#e8d5c0] text-[#1a0f0a] px-8 py-3.5 rounded-xl font-bold text-base hover:bg-white transition shadow-xl hover:scale-105 transform duration-300"
-          style={{ fontFamily: "'Lora', serif" }}
-        >
-          Ver Catálogo Completo <ArrowRight size={18} />
-        </Link>
-      </div>
+    <div className="relative z-10 flex flex-col items-center">
 
-      {/* EL CARRUSEL INTERNO */}
-      <div className="flex-1 w-full relative flex items-center justify-center">
-        
-        {/* Flecha Izquierda */}
-        <button 
+      {/* Zona imagen + flechas */}
+      <div className="relative w-full flex items-center justify-center gap-4 md:gap-8 mb-6">
+
+        {/* Flecha izquierda */}
+        <button
           onClick={prevPlatillo}
-          className="absolute left-0 md:left-4 z-20 bg-[#1a0f0a]/80 border border-[#c4a580]/30 text-[#c4a580] hover:text-white hover:bg-[#c4a580] hover:border-[#c4a580] p-2 md:p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+          aria-label="Platillo anterior"
+          className="flex-shrink-0 p-2 text-[#c4a580] hover:text-[#e8d5c0] transition-all duration-300 hover:-translate-x-0.5"
         >
-          <ChevronDown size={24} className="rotate-90" />
+          <ChevronLeft size={28} strokeWidth={1.5} />
         </button>
 
-        {/* Imagen del Platillo Actual */}
-        <div className="relative w-56 h-56 md:w-72 md:h-72 flex-shrink-0">
-          <div className="absolute inset-0 bg-[#c4a580]/20 rounded-full blur-3xl"></div>
+        {/* Vitrina Clara */}
+        <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
           
-          {/* La imagen cambia con una animación de rotación suave */}
-          <motion.img 
-            key={platilloIndex}
-            initial={{ opacity: 0, rotate: -15, scale: 0.9 }}
-            animate={{ opacity: 1, rotate: 0, scale: 1 }}
-            transition={{ duration: 0.5, type: "spring" }}
-            src={platillosData[platilloIndex].img} 
-            alt={platillosData[platilloIndex].nombre} 
-            className="relative z-10 w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]" 
-          />
+          {/* La tarjeta de vitrina (Fondo Crema/Blanco) */}
+          <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[#f5efe6] border border-white/50 shadow-[0_15px_40px_rgba(0,0,0,0.3)]">
+            
+            {/* Un brillo sutil en la esquina superior izquierda para simular luz de vitrina */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-transparent to-black/5 pointer-events-none" />
+
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={platilloIndex}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                src={platillosData[platilloIndex].img}
+                alt={platillosData[platilloIndex].nombre}
+                loading="lazy"
+                decoding="async"
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.15}
+                onDragEnd={(_, info) => {
+                  if (info.offset.x < -50) nextPlatillo();
+                  if (info.offset.x > 50) prevPlatillo();
+                }}
+                className="relative z-10 w-full h-full object-contain p-6 cursor-grab active:cursor-grabbing select-none"
+                /* mixBlendMode multiply fusiona el fondo blanco de tu foto con el crema de la vitrina */
+                style={{ mixBlendMode: "multiply" }} 
+              />
+            </AnimatePresence>
+          </div>
         </div>
 
-        {/* Flecha Derecha */}
-        <button 
+        {/* Flecha derecha */}
+        <button
           onClick={nextPlatillo}
-          className="absolute right-0 md:right-4 z-20 bg-[#1a0f0a]/80 border border-[#c4a580]/30 text-[#c4a580] hover:text-white hover:bg-[#c4a580] hover:border-[#c4a580] p-2 md:p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+          aria-label="Siguiente platillo"
+          className="flex-shrink-0 p-2 text-[#c4a580] hover:text-[#e8d5c0] transition-all duration-300 hover:translate-x-0.5"
         >
-          <ChevronDown size={24} className="-rotate-90" />
+          <ChevronRight size={28} strokeWidth={1.5} />
         </button>
 
-        {/* Texto flotante con el nombre y precio del platillo */}
-        <motion.div 
-          key={`text-${platilloIndex}`}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 z-20 bg-[#1a0f0a] border border-[#c4a580]/40 px-4 py-1.5 rounded-full whitespace-nowrap shadow-lg"
-        >
-          <span className="text-[#e8d5c0] text-xs font-bold" style={{ fontFamily: "'Lora', serif" }}>
-            {platillosData[platilloIndex].nombre} — {platillosData[platilloIndex].precio}
-          </span>
-        </motion.div>
       </div>
-      
+
+      {/* Info del platillo */}
+      <div className="text-center min-h-[80px] md:min-h-[90px]">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`info-${platilloIndex}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <h3 className="text-xl md:text-2xl font-bold text-white leading-tight mb-1"
+                style={{ fontFamily: "'Playfair Display', serif" }}>
+              {platillosData[platilloIndex].nombre}
+            </h3>
+            <p className="text-lg font-bold text-[#e8d5c0] mb-1"
+               style={{ fontFamily: "'Playfair Display', serif" }}>
+              {platillosData[platilloIndex].precio}
+            </p>
+            <p className="text-xs md:text-sm text-[#f5efe6]/60"
+               style={{ fontFamily: "'Lora', serif" }}>
+              {platillosData[platilloIndex].desc}
+            </p>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Puntos de navegación */}
+      <div className="flex justify-center gap-2 mt-6">
+        {platillosData.map((_, index) => {
+          const isActive = platilloIndex === index;
+          return (
+            <button
+              key={index}
+              onClick={() => setPlatilloIndex(index)}
+              aria-label={`Ver platillo ${index + 1}`}
+              aria-current={isActive ? "true" : "false"}
+              className={`transition-all duration-300 rounded-full ${
+                isActive
+                  ? "bg-[#e8d5c0] w-5 h-1.5"
+                  : "bg-[#c4a580]/40 w-1.5 h-1.5 hover:bg-[#c4a580]/60"
+              }`}
+            />
+          );
+        })}
+      </div>
+
+      {/* Link catálogo */}
+      <Link
+        href="/platillos"
+        className="mt-6 inline-flex items-center gap-2 text-[#e8d5c0] text-sm font-semibold border-b border-[#e8d5c0]/30 pb-1 hover:border-[#e8d5c0] transition-all duration-300 group"
+        style={{ fontFamily: "'Lora', serif" }}
+      >
+        Ver catálogo completo
+        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+      </Link>
+
     </div>
   </motion.div>
+
 </section>
 
 {/* SECCIÓN: ¿BUSCAS ALGO MÁS? (Servicios + Sugerencias integrados) */}
