@@ -415,11 +415,14 @@ const prevPlatillo = () => setPlatilloIndex((prev) => (prev - 1 + platillosData.
     variants={fadeIn}
     className="text-center mb-8"
   >
-    
-    <h1 className="text-xl md:text-2xl font-semibold text-[#e8d5c0]"
-        style={{ fontFamily: "'Playfair Display', serif" }}>
+    <p className="text-[#c4a580] text-xs font-semibold tracking-[0.2em] uppercase mb-2"
+       style={{ fontFamily: "'Lora', serif" }}>
       Platillos
-    </h1>
+    </p>
+    <h2 className="text-xl md:text-2xl font-semibold text-[#e8d5c0]"
+        style={{ fontFamily: "'Playfair Display', serif" }}>
+      Beatello, Sabian y más
+    </h2>
     <p className="text-[#c4a580]/60 text-xs mt-1"
        style={{ fontFamily: "'Lora', serif" }}>
       Crash, ride y splash. Platillos listos para estrenar.
@@ -437,12 +440,12 @@ const prevPlatillo = () => setPlatilloIndex((prev) => (prev - 1 + platillosData.
       if (e.key === "ArrowLeft") prevPlatillo();
       if (e.key === "ArrowRight") nextPlatillo();
     }}
-    className="relative overflow-hidden rounded-2xl bg-[#2e1f14]/70 backdrop-blur border border-[#c4a580]/20 px-6 py-8 md:px-10 md:py-10 outline-none focus-visible:ring-2 focus-visible:ring-[#c4a580]/40"
+    className="relative overflow-hidden rounded-2xl bg-[#2e1f14]/70 backdrop-blur border border-[#c4a580]/20 p-6 md:p-10 outline-none focus-visible:ring-2 focus-visible:ring-[#c4a580]/40"
   >
-    <div className="relative z-10 flex flex-col items-center">
+    <div className="relative z-10 flex flex-col items-center w-full">
 
       {/* Zona imagen + flechas */}
-      <div className="relative w-full flex items-center justify-center gap-4 md:gap-8 mb-6">
+      <div className="relative w-full flex items-center justify-center gap-2 md:gap-4 mb-6">
 
         {/* Flecha izquierda */}
         <button
@@ -453,39 +456,34 @@ const prevPlatillo = () => setPlatilloIndex((prev) => (prev - 1 + platillosData.
           <ChevronLeft size={28} strokeWidth={1.5} />
         </button>
 
-        {/* Vitrina Clara */}
-        <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+        {/* Vitrina Clara - AHORA ES HORIZONTAL */}
+        <div className="relative flex-1 max-w-2xl h-52 md:h-64 rounded-2xl overflow-hidden bg-[#f5efe6] border border-white/50 shadow-[0_15px_40px_rgba(0,0,0,0.3)]">
           
-          {/* La tarjeta de vitrina (Fondo Crema/Blanco) */}
-          <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[#f5efe6] border border-white/50 shadow-[0_15px_40px_rgba(0,0,0,0.3)]">
-            
-            {/* Un brillo sutil en la esquina superior izquierda para simular luz de vitrina */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-transparent to-black/5 pointer-events-none" />
+          {/* Brillo de vitrina */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-transparent to-black/5 pointer-events-none z-10" />
 
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={platilloIndex}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                src={platillosData[platilloIndex].img}
-                alt={platillosData[platilloIndex].nombre}
-                loading="lazy"
-                decoding="async"
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.15}
-                onDragEnd={(_, info) => {
-                  if (info.offset.x < -50) nextPlatillo();
-                  if (info.offset.x > 50) prevPlatillo();
-                }}
-                className="relative z-10 w-full h-full object-contain p-6 cursor-grab active:cursor-grabbing select-none"
-                /* mixBlendMode multiply fusiona el fondo blanco de tu foto con el crema de la vitrina */
-                style={{ mixBlendMode: "multiply" }} 
-              />
-            </AnimatePresence>
-          </div>
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={platilloIndex}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              src={platillosData[platilloIndex].img}
+              alt={platillosData[platilloIndex].nombre}
+              loading="lazy"
+              decoding="async"
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.15}
+              onDragEnd={(_, info) => {
+                if (info.offset.x < -50) nextPlatillo();
+                if (info.offset.x > 50) prevPlatillo();
+              }}
+              className="w-full h-full object-contain p-4 md:p-6 cursor-grab active:cursor-grabbing select-none relative z-0"
+              style={{ mixBlendMode: "multiply" }} 
+            />
+          </AnimatePresence>
         </div>
 
         {/* Flecha derecha */}
@@ -499,8 +497,8 @@ const prevPlatillo = () => setPlatilloIndex((prev) => (prev - 1 + platillosData.
 
       </div>
 
-      {/* Info del platillo */}
-      <div className="text-center min-h-[80px] md:min-h-[90px]">
+      {/* Info del platillo (Debajo de la vitrina) */}
+      <div className="text-center min-h-[80px] md:min-h-[90px] w-full">
         <AnimatePresence mode="wait">
           <motion.div
             key={`info-${platilloIndex}`}
@@ -559,7 +557,6 @@ const prevPlatillo = () => setPlatilloIndex((prev) => (prev - 1 + platillosData.
   </motion.div>
 
 </section>
-
 {/* SECCIÓN: ¿BUSCAS ALGO MÁS? (Servicios + Sugerencias integrados) */}
 <section className="py-16 px-4 max-w-5xl mx-auto">
   <div className="text-center mb-12">
