@@ -75,7 +75,7 @@ const platillosData = [
   { img: "/fotos/splashAAX.jpg", nombre: "Splash Sabian AAX", precio: "130 USD", desc: "Splash Gama Alta, sonido espectacular " },
   { img: "/fotos/rideB.jpg", nombre: "Ride Beatello 20\"", precio: "65 USD", desc: "El estándar preciso en platillos." }, 
   { img: "/fotos/chinaB.jpg", nombre: "China Beatello 18\"", precio: "55 USD", desc: "Sonido de impacto necesario en todo set" },
-  { img: "/fotos/trashBll.jpg", nombre: "Trash Crash Beatello 18\"", precio: "58 USD", desc: "Brillo y proyección profesional." },
+  { img: "/fotos/TrashBll.jpg", nombre: "Trash Crash Beatello 18\"", precio: "58 USD", desc: "Brillo y proyección profesional." },
   { img: "/fotos/splashB.jpg", nombre: "Splash Beatello 8\"", precio: "32 USD", desc: "La mejor relación calidad-precio." }, 
 ];
 

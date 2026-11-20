@@ -13,7 +13,7 @@ export default function Platillos() {
   // Aquí puedes cambiar los productos por los que tengas tú
   const platillos = [
 
-  { img: "/fotos/trashBll.jpg", nombre: "Trash Crash Beatello 18\"", precio: "58 USD", desc: "Brillo y proyección profesional." },
+  { img: "/fotos/TrashBll.jpg", nombre: "Trash Crash Beatello 18\"", precio: "58 USD", desc: "Brillo y proyección profesional." },
   { img: "/fotos/splashAAX.jpg", nombre: "Splash Sabian AAX", precio: "130 USD", desc: "Splash Gama Alta, sonido espectacular " },
   { img: "/fotos/rideB.jpg", nombre: "Ride Beatello 20\"", precio: "65 USD", desc: "El estándar preciso en platillos." }, 
   { img: "/fotos/crashB.jpg", nombre: "Crash Beatello 16\"", precio: "58 USD", desc: "Brillo y proyección profesional." },
