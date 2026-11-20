@@ -75,7 +75,7 @@ const platillosData = [
   { img: "/fotos/splashAAX.jpg", nombre: "Splash Sabian AAX", precio: "130 USD", desc: "Splash Gama Alta, sonido espectacular " },
   { img: "/fotos/rideB.jpg", nombre: "Ride Beatello 20\"", precio: "65 USD", desc: "El estándar preciso en platillos." }, 
   { img: "/fotos/chinaB.jpg", nombre: "China Beatello 18\"", precio: "55 USD", desc: "Sonido de impacto necesario en todo set" },
-  { img: "/fotos/trashB.jpg", nombre: "Trash Crash Beatello 18\"", precio: "58 USD", desc: "Brillo y proyección profesional." },
+  { img: "/fotos/trashBll.jpg", nombre: "Trash Crash Beatello 18\"", precio: "58 USD", desc: "Brillo y proyección profesional." },
   { img: "/fotos/splashB.jpg", nombre: "Splash Beatello 8\"", precio: "32 USD", desc: "La mejor relación calidad-precio." }, 
 ];
 
@@ -415,13 +415,9 @@ const prevPlatillo = () => setPlatilloIndex((prev) => (prev - 1 + platillosData.
     variants={fadeIn}
     className="text-center mb-8"
   >
-    <p className="text-[#c4a580] text-xs font-semibold tracking-[0.2em] uppercase mb-2"
-       style={{ fontFamily: "'Lora', serif" }}>
-      Platillos
-    </p>
     <h2 className="text-xl md:text-2xl font-semibold text-[#e8d5c0]"
         style={{ fontFamily: "'Playfair Display', serif" }}>
-      Beatello, Sabian y más
+      Platillos
     </h2>
     <p className="text-[#c4a580]/60 text-xs mt-1"
        style={{ fontFamily: "'Lora', serif" }}>
@@ -569,34 +565,45 @@ const prevPlatillo = () => setPlatilloIndex((prev) => (prev - 1 + platillosData.
   </div>
 
   <div className="border-t border-[#c4a580]/20">
-    {[
-      { titulo: "Marcas Especiales", desc: "¿Buscas baquetas Vic Firth, Promark o Zildjian? Podemos importar la marca que necesitas a pedido.", link: "https://wa.me/5356956051?text=Hola%2C+estoy+buscando+una+marca+especial+que+no+veo+en+la+web.+%C2%BFMe+pueden+ayudar%3F" },
-      { titulo: "Hardware Específico", desc: "¿Un soporte para un Tom extra? ¿Un pedal doble? Si necesitas hardware especializado, te lo conseguimos.", link: "https://wa.me/5356956051?text=Hola%2C+necesito+preguntar+por+un+accesorio+de+hardware+que+no+est%C3%A1+en+la+web.+%C2%BFMe+ayudan%3F" },
-      { titulo: "Pads y Parches", desc: "¿Necesitas medidas específicas o marcas de parches que no tenemos? Dinos cuál buscas y lo traemos.", link: "https://wa.me/5356956051?text=Hola%2C+busco+un+parche+o+pad+en+espec%C3%ADfico+que+no+veo+en+el+cat%C3%A1logo.+%C2%BFLo+pueden+traer%3F" }
-    ].map((servicio, i) => (
-      <a 
-        key={i} 
-        href="#" 
-        onClick={(e) => handleWhatsAppClick(e, servicio.link)}
-        className="group flex flex-col md:flex-row justify-between items-start md:items-center py-8 border-b border-[#c4a580]/20 hover:bg-[#c4a580]/5 px-4 md:px-8 transition-all duration-500 relative overflow-hidden"
-      >
-        <span className="absolute left-0 top-0 text-[100px] md:text-[140px] font-black text-white/[0.02] leading-none select-none pointer-events-none group-hover:text-[#c4a580]/10 transition-colors duration-500" style={{ fontFamily: "'Playfair Display', serif" }}>
-          0{i + 1}
-        </span>
+  {[
+    { titulo: "Marcas Especiales", desc: "¿Buscas baquetas Vic Firth, Promark o Zildjian? Podemos importar la marca que necesitas a pedido.", link: "https://wa.me/5356956051?text=Hola%2C+estoy+buscando+una+marca+especial+que+no+veo+en+la+web.+%C2%BFMe+pueden+ayudar%3F" },
+    { titulo: "Hardware Específico", desc: "¿Un soporte para un Tom extra? ¿Un pedal doble? Si necesitas hardware especializado, te lo conseguimos.", link: "https://wa.me/5356956051?text=Hola%2C+necesito+preguntar+por+un+accesorio+de+hardware+que+no+est%C3%A1+en+la+web.+%C2%BFMe+ayudan%3F" },
+    { titulo: "Pads y Parches", desc: "¿Necesitas medidas específicas o marcas de parches que no tenemos? Dinos cuál buscas y lo traemos.", link: "https://wa.me/5356956051?text=Hola%2C+busco+un+parche+o+pad+en+espec%C3%ADfico+que+no+veo+en+el+cat%C3%A1logo.+%C2%BFLo+pueden+traer%3F" }
+  ].map((servicio, i) => (
+    <a 
+      key={i} 
+      href="#" 
+      onClick={(e) => handleWhatsAppClick(e, servicio.link)}
+      className="group flex justify-between items-center py-5 md:py-8 border-b border-[#c4a580]/20 hover:bg-[#c4a580]/5 px-2 md:px-8 transition-all duration-300 relative overflow-hidden cursor-pointer"
+    >
+      <span className="absolute left-0 top-0 text-[80px] md:text-[140px] font-black text-white/[0.02] leading-none select-none pointer-events-none group-hover:text-[#c4a580]/10 transition-colors duration-500" style={{ fontFamily: "'Playfair Display', serif" }}>
+        0{i + 1}
+      </span>
 
-        <div className="relative z-10 max-w-2xl">
-          <h3 className="text-xl md:text-2xl font-bold text-[#e8d5c0] mb-2 group-hover:text-white transition-colors" style={{ fontFamily: "'Playfair Display', serif" }}>
-            {servicio.titulo}
-          </h3>
-          <p className="text-[#f5efe6]/70 text-sm leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>
-            {servicio.desc}
-          </p>
-        </div>
+      {/* Contenedor del texto a la izquierda */}
+      <div className="relative z-10 flex-1 pr-4">
+        <h3 className="text-lg md:text-2xl font-bold text-[#e8d5c0] mb-1.5 md:mb-2 group-hover:text-white transition-colors flex items-center gap-2" style={{ fontFamily: "'Playfair Display', serif" }}>
+          {servicio.titulo}
+          {/* Icono de WhatsApp (más visible en móvil, hover en PC) */}
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-60 md:opacity-0 group-hover:opacity-100 text-[#c4a580] transition-all duration-300">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+        </h3>
+        <p className="text-[#f5efe6]/70 text-xs md:text-sm leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>
+          {servicio.desc}
+        </p>
+      </div>
 
-        {/* Flecha eliminada aquí */}
-      </a>
-    ))}
-  </div>
+      {/* Flecha (Chevron) a la derecha - Indica que es clickeable */}
+      <div className="relative z-10 flex-shrink-0 flex items-center justify-center pr-2">
+        <ChevronRight 
+          size={20} 
+          className="text-[#c4a580]/50 group-hover:text-[#e8d5c0] transition-all duration-300 md:transform md:group-hover:translate-x-1" 
+        />
+      </div>
+    </a>
+  ))}
+</div>
 
   <div className="pt-10">
     <div className="flex items-center gap-4 mb-8">

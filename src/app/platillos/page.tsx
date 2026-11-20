@@ -13,7 +13,7 @@ export default function Platillos() {
   // Aquí puedes cambiar los productos por los que tengas tú
   const platillos = [
 
-  { img: "/fotos/trashB.jpg", nombre: "Trash Crash Beatello 18\"", precio: "58 USD", desc: "Brillo y proyección profesional." },
+  { img: "/fotos/trashBll.jpg", nombre: "Trash Crash Beatello 18\"", precio: "58 USD", desc: "Brillo y proyección profesional." },
   { img: "/fotos/splashAAX.jpg", nombre: "Splash Sabian AAX", precio: "130 USD", desc: "Splash Gama Alta, sonido espectacular " },
   { img: "/fotos/rideB.jpg", nombre: "Ride Beatello 20\"", precio: "65 USD", desc: "El estándar preciso en platillos." }, 
   { img: "/fotos/crashB.jpg", nombre: "Crash Beatello 16\"", precio: "58 USD", desc: "Brillo y proyección profesional." },
@@ -124,6 +124,91 @@ export default function Platillos() {
             </a>
           </motion.div>
         </section>
+
+        {/* SECCIÓN: APRENDE (Educativa) */}
+<section className="py-16 px-4 max-w-4xl mx-auto border-t border-[#c4a580]/20 mt-16">
+  
+  {/* Encabezado de la sección */}
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, margin: "-80px" }}
+    variants={fadeIn}
+    className="text-center mb-12"
+  >
+    <span 
+      className="text-[#e8d5c0] font-bold text-sm tracking-[0.2em] uppercase" 
+      style={{ fontFamily: "'Lora', serif" }}
+    >
+      Aprende
+    </span>
+    <h2 
+      className="text-3xl md:text-4xl font-bold mt-3 mb-4 text-white" 
+      style={{ fontFamily: "'Playfair Display', serif" }}
+    >
+     💡 Consejos para tus Platillos
+    </h2>
+    <p 
+      className="text-[#f5efe6]/80 text-sm md:text-base max-w-2xl mx-auto leading-relaxed" 
+      style={{ fontFamily: "'Lora', serif" }}
+    >
+      La limpieza, el montaje y el rol de cada platillo son tan importantes como tu técnica.
+    </p>
+  </motion.div>
+
+  {/* Bloques de contenido */}
+  <div className="space-y-6 md:space-y-8">
+    
+    {/* 1. Cuidado y Limpieza */}
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className="bg-[#2e1f14]/80 border border-[#c4a580]/20 rounded-2xl p-6 md:p-8 backdrop-blur-sm"
+    >
+      <h3 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-2" style={{ fontFamily: "'Lora', serif" }}>
+        🔧 Cuidado y Limpieza
+      </h3>
+      <p className="text-[#f5efe6]/80 text-sm md:text-base leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>
+        El enemigo número uno de los platillos no es el golpe, es el sudor y la suciedad. Los ácidos de tus manos se acumulan en la superficie y con el tiempo pueden corroer la aleación, apagando su brillo. Para limpiarlos, usa siempre un paño de microfibra suave y un limpiador específico para platillos (nunca productos abrasivos como el limpiador de metales de cocina). Aplica el producto en el paño, no directamente en el platillo, y limpia en movimientos circulares siguiendo las ranuras del torneado. Y un secreto: <strong className="text-white">nunca laves tus platillos con agua</strong>, la humedad es su peor enemiga.
+      </p>
+    </motion.div>
+
+    {/* 2. Montaje Correcto */}
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+      className="bg-[#2e1f14]/80 border border-[#c4a580]/20 rounded-2xl p-6 md:p-8 backdrop-blur-sm"
+    >
+      <h3 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-2" style={{ fontFamily: "'Lora', serif" }}>
+        ⚙️ Montaje Correcto
+      </h3>
+      <p className="text-[#f5efe6]/80 text-sm md:text-base leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>
+        Un platillo mal montado pierde todo su potencial. Asegúrate de que el platillo descanse sobre el fieltro inferior del soporte y no directamente sobre el metal. Al ajustar la tuerca superior, <strong className="text-white">no la aprietes hasta el fondo</strong>: deja un pequeño espacio (una o dos vueltas) para que el platillo "flote" y se balancee. Si lo aprietas demasiado, ahogas su sonido y el metal sufre microfisuras por la tensión. Además, dale una ligera inclinación hacia ti; golpear un platillo totalmente plano desgasta la baqueta y el platillo de forma desigual.
+      </p>
+    </motion.div>
+
+    {/* 3. El Rol de cada Platillo */}
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+      className="bg-[#2e1f14]/80 border border-[#c4a580]/20 rounded-2xl p-6 md:p-8 backdrop-blur-sm"
+    >
+      <h3 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-2" style={{ fontFamily: "'Lora', serif" }}>
+        🎯 El Rol de cada Platillo
+      </h3>
+      <p className="text-[#f5efe6]/80 text-sm md:text-base leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>
+        Armar tu set no es solo poner metales al azar. El <strong className="text-white">Crash</strong> es tu platillo de acentos: ese golpe potente que marca el inicio de una sección o un cambio de energía. El <strong className="text-white">Ride</strong> es tu base rítmica: mantiene el pulso de la canción con un sonido constante y definido. El <strong className="text-white">Hi-Hat</strong> (o Charles) es el que lleva el tiempo con precisión. Por su parte, el <strong className="text-white">Splash</strong> y el <strong className="text-white">China</strong> son tus "efectos especiales": golpes rápidos y cortos que añaden color y textura. Conocer su función te ayuda a elegir qué golpear y cuándo hacerlo.
+      </p>
+    </motion.div>
+
+  </div>
+</section>
 
         {/* Botón volver arriba */}
         <div className="text-center py-8">
