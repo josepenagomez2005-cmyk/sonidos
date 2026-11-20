@@ -9,8 +9,16 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest", 
   appleWebApp: { 
     capable: true,
-    statusBarStyle: "default",
+    statusBarStyle: "black-translucent", // Cambiado para que la barra de estado se fusione con el fondo
     title: "Sonidos",
+  },
+  icons: {
+    icon: "/fotos/icon-192x192.png", // El ícono para el navegador
+    apple: "/fotos/icon-192x192.png", // El ícono cuadrado para iPhone (usa el mismo o el apple-touch-icon)
+  },
+  other: {
+    // AQUÍ LLAMAMOS A LA IMAGEN DE CANVA
+    "apple-touch-startup-image": "/fotos/splash-screen.png",
   },
 };
 
@@ -22,16 +30,19 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <meta name="google-site-verification" content="anM4fHARqY-IkW-G8ZEXXTWG9nY9S8n4aANZS2sqLFI" />
         <meta name="theme-color" content="#1a0f0a" /> 
-        <link rel="apple-touch-icon" href="/fotos/logoS.png" /> 
+        
+        {/* Etiquetas manuales para iOS (por si acaso Next.js no las renderiza) */}
+        <link rel="apple-touch-icon" href="/fotos/icon-192x192.png" /> 
+        <link rel="apple-touch-startup-image" href="/fotos/splash-screen.png" />
+        
         <link 
           href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" 
           rel="stylesheet" 
         />
       </head>
-      {/* CAMBIA bg-[#f5efe6] POR bg-[#1a0f0a] PARA QUE COINCIDA CON TU TIENDA */}
       <body className="bg-[#1a0f0a]">
         {children} 
         <Analytics/> 
